@@ -1,0 +1,44 @@
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <app-blur-fade [delay]="100">
+            <div class="text-center mb-16">
+                <h2 class="section-badge">Serviços Jurídicos</h2>
+                <h1 class="main-title">Áreas de Especialização</h1>
+                <p class="section-description">
+                    Oferecemos assessoria jurídica especializada em diversas áreas do direito, com foco na eficácia e na
+                    proteção total dos seus interesses.
+                </p>
+            </div>
+        </app-blur-fade>
+
+        <!-- Bento Grid of Practice Areas -->
+        <app-bento-grid class="max-w-5xl mx-auto">
+            <div *ngFor="let area of practiceAreas; let i = index" [class]="area.class">
+                <app-magic-card class="h-full" [gradientColor]="'#78572b22'" [gradientOpacity]="0.5"
+                    [gradientSize]="250">
+                    <app-bento-card [title]="area.title" [description]="area.description"
+                        class="h-full border-none shadow-none bg-transparent">
+                        <div icon-container>
+                            <lucide-icon [name]="area.icon" class="w-10 h-10 text-secondary mb-2" />
+                        </div>
+                        <app-border-beam [delay]="i * 0.5" [duration]="10" />
+                    </app-bento-card>
+                </app-magic-card>
+            </div>
+        </app-bento-grid>
+
+        <!-- Legal Aid Disclaimer -->
+        <app-blur-fade [delay]="600">
+            <div class="mt-20 p-8 rounded-3xl bg-zinc-50 border border-zinc-200 text-center max-w-3xl mx-auto">
+                <lucide-icon [name]="ScaleIcon" class="w-8 h-8 text-secondary mx-auto mb-4" />
+                <h3 class="text-xl font-bold text-primary mb-2">Apoio Judiciário</h3>
+                <p class="text-zinc-500">
+                    Prestamos assessoria no âmbito do apoio judiciário, garantindo o acesso ao direito e aos tribunais
+                    para todos os cidadãos, independentemente da sua situação económica.
+                </p>
+            </div>
+        </app-blur-fade>
+    </div>
+</section>

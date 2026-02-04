@@ -1,0 +1,11 @@
+.section-badge {
+    @apply text-secondary font-semibold tracking-[0.3em] uppercase text-sm mb-4 block;
+}
+
+.main-title {
+    @apply text-5xl font-serif font-bold text-primary mb-6;
+}
+
+.section-description {
+    @apply text-zinc-500 max-w-2xl mx-auto text-lg;
+}

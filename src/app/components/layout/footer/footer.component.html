@@ -1,0 +1,71 @@
+<footer class="bg-primary text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
+            <!-- About Firm -->
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-serif font-bold mb-4">Conceição Lopes</h3>
+                <p class="text-white/70 max-w-sm mb-6">
+                    Defendendo os seus direitos com ética, transparência e profissionalismo.
+                    Comprometida com a justiça e a dignidade humana.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/concei%C3%A7%C3%A3o-lopes-a63996319/" target="_blank"
+                        class="social-link" aria-label="LinkedIn">
+                        <lucide-icon [name]="Linkedin" class="w-5 h-5" />
+                    </a>
+                    <a href="https://www.facebook.com/p/Concei%C3%A7%C3%A3o-Lopes-Advogada-61555354289580/"
+                        target="_blank" class="social-link" aria-label="Facebook">
+                        <lucide-icon [name]="Facebook" class="w-5 h-5" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-lg font-semibold mb-6">Contactos</h4>
+                <ul class="space-y-4 text-white/70 text-sm">
+                    <li class="flex items-center gap-3">
+                        <lucide-icon [name]="Phone" class="w-5 h-5 text-secondary" />
+                        <div>
+                            <span class="block">+351 910 322 893 *</span>
+                            <span class="text-[10px] opacity-50 block">* Chamada para rede móvel nacional</span>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <lucide-icon [name]="Mail" class="w-5 h-5 text-secondary" />
+                        <span>conceicao-66631c&#64;adv.oa.pt</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <lucide-icon [name]="MapPin" class="w-5 h-5 text-secondary shrink-0" />
+                        <span>Avenida João XXIII, Bloco 2, R/C,<br />Nelas, Portugal</span>
+                    </li>
+                    <li class="flex items-start gap-3 pt-2">
+                        <lucide-icon [name]="Clock" class="w-5 h-5 text-secondary shrink-0" />
+                        <span>2ª a 6ª feira: 9h - 18h</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Useful Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-6">Links Úteis</h4>
+                <ul class="space-y-4 text-white/70">
+                    <li><a routerLink="/" class="footer-link">Início</a></li>
+                    <li><a routerLink="/sobre" class="footer-link">Sobre</a></li>
+                    <li><a routerLink="/areas" class="footer-link">Áreas de Atuação</a></li>
+                    <li><a routerLink="/agendamento" class="footer-link">Contactos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Legal & Copyright -->
+        <div class="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+            <p>© 2026 Conceição Lopes - Advogada. Todos os direitos reservados.</p>
+            <div class="flex gap-6">
+                <a routerLink="/politica-privacidade" class="hover:text-white transition-colors">Política de
+                    Privacidade</a>
+                <a routerLink="/politica-cookies" class="hover:text-white transition-colors">Política de Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>

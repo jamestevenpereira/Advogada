@@ -1,0 +1,52 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20">
+            <!-- Brand Logo & Name -->
+            <div routerLink="/" class="flex items-center gap-2 cursor-pointer">
+                <img src="assets/logo.png" alt="Conceição Lopes" class="h-12 w-auto object-contain" />
+                <div class="hidden sm:flex flex-col">
+                    <span class="text-xl font-serif font-bold text-primary leading-tight">Conceição Lopes</span>
+                    <span class="text-xs tracking-[0.2em] uppercase text-accent font-medium">Advogada</span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a routerLink="/" routerLinkActive="text-primary font-semibold"
+                    [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                    Início
+                </a>
+                <a routerLink="/sobre" routerLinkActive="text-primary font-semibold" class="nav-link">
+                    Sobre
+                </a>
+                <a routerLink="/areas" routerLinkActive="text-primary font-semibold" class="nav-link">
+                    Áreas
+                </a>
+                <a routerLink="/agendamento" class="btn-primary relative overflow-hidden">
+                    Agendar Consulta
+                    <app-border-beam [duration]="8" [size]="100" />
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button (click)="toggleMenu()" class="text-zinc-600 focus:outline-none" aria-label="Toggle menu">
+                    <lucide-icon [name]="isMenuOpen() ? X : Menu" class="w-6 h-6" />
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div *ngIf="isMenuOpen()"
+            class="md:hidden py-4 border-t border-zinc-100 flex flex-col space-y-4 animate-in slide-in-from-top-2 duration-200">
+            <a routerLink="/" (click)="closeMenu()" class="mobile-nav-link">Início</a>
+            <a routerLink="/sobre" (click)="closeMenu()" class="mobile-nav-link">Sobre</a>
+            <a routerLink="/areas" (click)="closeMenu()" class="mobile-nav-link">Áreas</a>
+            <a routerLink="/agendamento" (click)="closeMenu()"
+                class="btn-primary w-full text-center relative overflow-hidden">
+                Agendar Consulta
+                <app-border-beam [duration]="8" [size]="100" />
+            </a>
+        </div>
+    </nav>
+</header>

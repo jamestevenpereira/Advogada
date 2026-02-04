@@ -1,0 +1,162 @@
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 lg:py-48 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="assets/hero-bg-geometric-hd.png" alt="Advocacia Conceição Lopes"
+            class="w-full h-full object-cover opacity-50" />
+        <div class="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/80"></div>
+    </div>
+
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+            <!-- Text Content -->
+            <div
+                class="max-w-3xl lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
+                <app-blur-fade [delay]="100">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-secondary/20 shadow-sm mb-6">
+                        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                        <span class="text-xs font-medium text-secondary tracking-wide uppercase">Advocacia de
+                            Excelência</span>
+                    </div>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="200">
+                    <h1 class="hero-title text-zinc-900">
+                        Conceição Lopes
+                    </h1>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="300">
+                    <div class="hero-subtitle">
+                        <span>Defendendo os seus direitos em</span>
+                        <app-word-rotate [words]="['Família', 'Civil', 'Trabalho', 'Comercial']"
+                            class="text-secondary font-bold" />
+                    </div>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="500">
+                    <p class="hero-description text-lg text-zinc-600 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+                        A sua advogada de confiança. Oferecemos soluções jurídicas personalizadas com foco na
+                        excelência,
+                        transparência e na defesa intransigente dos seus interesses.
+                    </p>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="700" class="w-full sm:w-auto">
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto justify-center lg:justify-start">
+                        <app-shiny-button (click)="schedulingRedirect()"
+                            class="w-full sm:w-auto h-12 md:h-14 px-8 text-base md:text-lg">
+                            Agendar Consulta
+                            <lucide-icon [name]="ChevronRight" class="w-5 h-5 ml-1" />
+                        </app-shiny-button>
+                        <a routerLink="/areas"
+                            class="btn-hero-secondary h-12 md:h-14 px-8 flex items-center justify-center w-full sm:w-auto text-base md:text-lg">
+                            Ver Áreas de Atuação
+                        </a>
+                    </div>
+                </app-blur-fade>
+            </div>
+
+            <!-- Right Visual (Hero Image) -->
+            <div class="hidden lg:block lg:col-span-5 relative mt-12 lg:mt-0">
+                <app-blur-fade [delay]="400">
+                    <div class="relative">
+                        <!-- Abstract Background Shapes -->
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-[2rem] rotate-6 opacity-60 blur-lg">
+                        </div>
+
+                        <!-- Main Image Container -->
+                        <div
+                            class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] transform hover:-translate-y-2 transition-transform duration-500">
+                            <img src="assets/foto-estatua.jpg" alt="Justiça e Direito"
+                                class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-1000" />
+
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+
+                            <!-- Floating Badge -->
+                            <div
+                                class="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl border border-white/20 text-white backdrop-blur-md">
+                                <div class="flex items-center gap-4">
+                                    <div class="text-4xl font-serif font-bold text-secondary-light">7</div>
+                                    <div class="text-sm font-medium leading-tight opacity-90">
+                                        Anos de<br>Experiência Dedicada
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </app-blur-fade>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Marquee Section -->
+<section class="py-24 bg-zinc-50 border-y border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 mb-16 text-center">
+        <h2 class="section-title">O que dizem os nossos clientes</h2>
+        <div class="title-accent"></div>
+    </div>
+
+    <app-marquee [pauseOnHover]="true" class="py-12">
+        <ng-template>
+            <div class="flex gap-[var(--gap)]">
+                <div *ngFor="let t of testimonials" class="testimonial-card">
+                    <p class="testimonial-text">"{{ t.text }}"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="testimonial-avatar">
+                            {{ t.initials }}
+                        </div>
+                        <div>
+                            <p class="testimonial-author">{{ t.author }}</p>
+                            <p class="testimonial-case">{{ t.caseType }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </app-marquee>
+</section>
+
+<!-- Core Values Section -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Confidentiality -->
+            <div class="feature-item">
+                <div class="icon-container">
+                    <lucide-icon [name]="ShieldCheck" class="w-8 h-8 text-secondary" />
+                </div>
+                <h3 class="feature-title">Confidencialidade</h3>
+                <p class="feature-description">Garantimos total sigilo em todos os processos, protegendo a sua
+                    privacidade em cada etapa.</p>
+            </div>
+
+            <!-- Ethics & Justice -->
+            <div class="feature-item">
+                <div class="icon-container">
+                    <lucide-icon [name]="Scale" class="w-8 h-8 text-secondary" />
+                </div>
+                <h3 class="feature-title">Ética e Justiça</h3>
+                <p class="feature-description">Pautamos a nossa atuação pelos mais elevados padrões éticos e
+                    deontológicos.</p>
+            </div>
+
+            <!-- Humane Treatment -->
+            <div class="feature-item">
+                <div class="icon-container">
+                    <lucide-icon [name]="Users" class="w-8 h-8 text-secondary" />
+                </div>
+                <h3 class="feature-title">Atendimento Humano</h3>
+                <p class="feature-description">Acreditamos que cada caso é único e merece um atendimento personalizado e
+                    próximo.</p>
+            </div>
+        </div>
+    </div>
+</section>

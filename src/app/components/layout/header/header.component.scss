@@ -1,0 +1,13 @@
+@use "sass:map";
+
+.nav-link {
+    @apply text-zinc-600 hover:text-primary transition-colors;
+}
+
+.mobile-nav-link {
+    @apply text-zinc-600 px-2 py-1;
+}
+
+.btn-primary {
+    @apply bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-primary/90 transition-all shadow-md active:scale-95;
+}

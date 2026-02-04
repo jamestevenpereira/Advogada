@@ -1,0 +1,7 @@
+<div [class]="cn(
+    'transition-all duration-700 ease-out',
+    isVisible() ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-md translate-y-8',
+    class()
+  )" [style.transition-delay]="delay() + 'ms'">
+    <ng-content />
+</div>

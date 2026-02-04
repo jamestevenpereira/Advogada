@@ -1,0 +1,28 @@
+<div *ngIf="showBanner()"
+    class="fixed bottom-6 left-6 right-6 md:left-auto md:w-[400px] z-[100] animate-in slide-in-from-bottom-5 duration-500">
+    <div class="bg-white border border-zinc-200 p-6 rounded-2xl shadow-2xl">
+        <div class="flex items-start gap-4 mb-4">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+                <lucide-icon [name]="Cookie" class="w-6 h-6 text-secondary" />
+            </div>
+            <div>
+                <h4 class="font-bold text-primary">A sua Privacidade</h4>
+                <p class="text-xs text-zinc-500 leading-relaxed mt-1">
+                    Utilizamos cookies para melhorar a sua experiência. Ao continuar, concorda com a nossa
+                    <a routerLink="/politica-cookies" class="text-secondary underline">Política de Cookies</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-3 mt-6">
+            <button (click)="acceptCookies()"
+                class="flex-1 bg-primary text-white py-2.5 rounded-xl text-sm font-bold hover:bg-primary/95 transition-all shadow-md active:scale-95">
+                Aceitar
+            </button>
+            <button (click)="declineCookies()"
+                class="flex-1 bg-zinc-100 text-zinc-600 py-2.5 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-all active:scale-95">
+                Personalizar
+            </button>
+        </div>
+    </div>
+</div>

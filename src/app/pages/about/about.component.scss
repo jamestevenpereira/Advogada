@@ -1,0 +1,43 @@
+.section-badge {
+    @apply text-secondary font-semibold tracking-[0.3em] uppercase text-sm mb-4 block;
+}
+
+.main-title {
+    @apply text-5xl font-serif font-bold text-primary mb-6;
+}
+
+.title-underline {
+    @apply h-1 w-24 bg-secondary mb-10;
+}
+
+.bio-content {
+    @apply space-y-6 text-zinc-500 text-lg leading-relaxed;
+}
+
+.fact-item {
+    @apply flex flex-col;
+}
+
+.fact-label {
+    @apply text-xs uppercase tracking-widest text-zinc-400 font-bold mb-1;
+}
+
+.fact-value {
+    @apply text-primary font-bold text-lg;
+}
+
+.btn-cta {
+    @apply inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/95 transition-all shadow-lg shadow-primary/20 mt-8;
+}
+
+.mission-item {
+    @apply flex items-center gap-6 p-4 rounded-2xl transition-all hover:bg-white hover:shadow-md;
+}
+
+.mission-icon {
+    @apply w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-xl shrink-0 shadow-lg shadow-secondary/20;
+}
+
+.mission-text {
+    @apply text-primary font-bold text-lg leading-snug;
+}

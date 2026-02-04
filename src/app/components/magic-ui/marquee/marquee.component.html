@@ -1,0 +1,12 @@
+<div [class]="containerClasses">
+  <div [class]="marqueeClasses">
+    <ng-container *ngTemplateOutlet="itemTemplate || fallbackTemplate"></ng-container>
+  </div>
+  <div [class]="marqueeClasses" aria-hidden="true">
+    <ng-container *ngTemplateOutlet="itemTemplate || fallbackTemplate"></ng-container>
+  </div>
+</div>
+
+<ng-template #fallbackTemplate>
+  <ng-content></ng-content>
+</ng-template>

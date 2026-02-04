@@ -1,0 +1,7 @@
+.social-link {
+    @apply w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors;
+}
+
+.footer-link {
+    @apply hover:text-secondary transition-colors;
+}

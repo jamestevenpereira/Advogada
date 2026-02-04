@@ -1,0 +1,207 @@
+<section class="py-24 bg-white min-h-[80vh]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <app-blur-fade [delay]="100">
+            <div class="text-center mb-16">
+                <h2 class="section-badge">Agendamento</h2>
+                <h1 class="main-title">Marque a sua Consulta</h1>
+                <p class="section-description">
+                    Preencha o formulário abaixo e entraremos em contacto para confirmar o seu agendamento o mais breve
+                    possível.
+                </p>
+            </div>
+        </app-blur-fade>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+
+            <!-- Contact Info Cards -->
+            <div class="lg:col-span-2 flex flex-col justify-between h-full space-y-4">
+                <app-blur-fade [delay]="200" class="flex-1 flex flex-col">
+                    <div class="contact-card flex-1 flex flex-col items-center justify-center text-center">
+                        <lucide-icon [name]="PhoneIcon" class="card-icon" />
+                        <h4 class="card-title">Telefone</h4>
+                        <p class="card-value">+351 910 322 893 *</p>
+                        <p class="card-disclaimer">* Chamada para rede móvel nacional</p>
+                    </div>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="300" class="flex-1 flex flex-col">
+                    <div class="contact-card flex-1 flex flex-col items-center justify-center text-center">
+                        <lucide-icon [name]="MailIcon" class="card-icon" />
+                        <h4 class="card-title">Email</h4>
+                        <p class="card-value whitespace-nowrap overflow-visible">conceicao-66631c&#64;adv.oa.pt</p>
+                    </div>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="350" class="flex-1 flex flex-col">
+                    <div class="contact-card flex-1 flex flex-col items-center justify-center text-center !mb-0">
+                        <lucide-icon [name]="ClockIcon" class="card-icon" />
+                        <h4 class="card-title">Horário</h4>
+                        <p class="card-value">2ª a 6ª feira<br />9h - 18h</p>
+                    </div>
+                </app-blur-fade>
+            </div>
+
+            <!-- Form Area -->
+            <div class="lg:col-span-3 flex flex-col">
+                @if (!submitted()) {
+                <app-blur-fade [delay]="400" class="h-full">
+                    <form [formGroup]="schedulingForm" (ngSubmit)="onSubmit()"
+                        class="scheduling-form h-full relative overflow-hidden">
+                        <!-- Border Beam for 'wow' effect -->
+                        <app-border-beam [duration]="12" [size]="300" />
+                        <!-- Name Fields -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label class="form-label"
+                                    [class.text-red-500]="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched">
+                                    <lucide-icon [name]="UserIcon" class="w-4 h-4" /> Primeiro Nome *
+                                </label>
+                                <input type="text" formControlName="firstName" class="form-input"
+                                    [class.border-red-500]="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched"
+                                    placeholder="Ex: Maria" />
+                                <p *ngIf="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched"
+                                    class="text-[10px] text-red-500 mt-1">
+                                    Nome inválido (use apenas letras).
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"
+                                    [class.text-red-500]="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched">
+                                    Último Nome *
+                                </label>
+                                <input type="text" formControlName="lastName" class="form-input"
+                                    [class.border-red-500]="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched"
+                                    placeholder="Ex: Silva" />
+                                <p *ngIf="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched"
+                                    class="text-[10px] text-red-500 mt-1">
+                                    Nome inválido (use apenas letras).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Contact Fields -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label class="form-label"
+                                    [class.text-red-500]="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched">
+                                    <lucide-icon [name]="MailIcon" class="w-4 h-4" /> Email *
+                                </label>
+                                <input type="email" formControlName="email" class="form-input"
+                                    [class.border-red-500]="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched"
+                                    placeholder="maria@exemplo.com" />
+                                <p *ngIf="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched"
+                                    class="text-[10px] text-red-500 mt-1">
+                                    Email inválido.
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"
+                                    [class.text-red-500]="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched">
+                                    <lucide-icon [name]="PhoneIcon" class="w-4 h-4" /> Telefone *
+                                </label>
+                                <input type="tel" formControlName="phone" class="form-input"
+                                    (input)="filterPhone($event)"
+                                    [class.border-red-500]="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched"
+                                    placeholder="9xxxxxxxx" />
+                                <p *ngIf="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched"
+                                    class="text-[10px] text-red-500 mt-1">
+                                    Telefone inválido (apenas números).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DateTime Fields -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label class="form-label"
+                                    [class.text-red-500]="schedulingForm.get('date')?.invalid && schedulingForm.get('date')?.touched">
+                                    <lucide-icon [name]="CalendarIcon" class="w-4 h-4" /> Data Desejada *
+                                </label>
+                                <input type="date" formControlName="date" class="form-input" [min]="minDate"
+                                    [class.border-red-500]="schedulingForm.get('date')?.invalid && schedulingForm.get('date')?.touched" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"
+                                    [class.text-red-500]="schedulingForm.get('time')?.invalid && schedulingForm.get('time')?.touched">
+                                    <lucide-icon [name]="ClockIcon" class="w-4 h-4" /> Hora Preferencial *
+                                </label>
+                                <select formControlName="time" class="form-select"
+                                    [class.border-red-500]="schedulingForm.get('time')?.invalid && schedulingForm.get('time')?.touched">
+                                    <option value="">Selecione...</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="09:30">09:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Reason Field -->
+                        <div class="form-group">
+                            <label class="form-label"
+                                [class.text-red-500]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched">
+                                <lucide-icon [name]="MessageIcon" class="w-4 h-4" /> Motivo da Consulta *
+                            </label>
+                            <textarea formControlName="reason" rows="4" class="form-textarea"
+                                [class.border-red-500]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched"
+                                placeholder="Descreva brevemente o assunto..."></textarea>
+                        </div>
+
+                        <!-- GDPR Consent -->
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" formControlName="gdpr" id="gdpr" class="gdpr-checkbox" />
+                            <label for="gdpr" class="gdpr-label"
+                                [class.text-red-500]="schedulingForm.get('gdpr')?.invalid && schedulingForm.get('gdpr')?.touched">
+                                GDPR - Eu concordo que este site armazene as informações enviadas por mim de forma a que
+                                se proceda à resposta da informação solicitada. *
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" [disabled]="schedulingForm.invalid || isSubmitting()" class="btn-submit">
+                            @if (isSubmitting()) {
+                            <div class="loading-spinner"></div>
+                            A enviar...
+                            } @else {
+                            <lucide-icon [name]="SendIcon" class="w-5 h-5" /> Submeter Pedido
+                            }
+                        </button>
+                    </form>
+                </app-blur-fade>
+                } @else {
+                <!-- Success State -->
+                <app-blur-fade>
+                    <div class="success-container">
+                        <div class="success-icon-wrapper">
+                            <lucide-icon [name]="CheckCircleIcon" class="w-10 h-10 text-secondary" />
+                        </div>
+                        <h3 class="success-title">Pedido Recebido!</h3>
+                        <p class="success-text">
+                            Obrigado pelo seu pedido, {{ schedulingForm.value.firstName }}. Entraremos em contacto
+                            consigo em breve para confirmar a data e hora.
+                        </p>
+                        <button (click)="resetForm()" class="btn-reset">
+                            Fazer novo agendamento
+                        </button>
+                    </div>
+                </app-blur-fade>
+                }
+            </div>
+        </div>
+    </div>
+</section>

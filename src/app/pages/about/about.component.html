@@ -1,0 +1,182 @@
+<section class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Photo Side -->
+            <app-blur-fade [delay]="200">
+                <div class="relative group">
+                    <!-- Decorative Background Element -->
+                    <div
+                        class="absolute -inset-4 bg-secondary/10 rounded-[2rem] -rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                    </div>
+
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl z-10">
+                        <img src="assets/advogada.jpg" alt="Dra. Conceição Lopes"
+                            class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                    </div>
+
+                    <!-- Feature Tag -->
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-2xl shadow-xl z-20 max-w-[200px] border border-white/10">
+                        <p class="text-xs uppercase tracking-widest text-secondary font-bold mb-1">Cédula Profissional
+                        </p>
+                        <p class="font-serif font-bold truncate">66631C</p>
+                    </div>
+                </div>
+            </app-blur-fade>
+
+            <!-- Biography Side -->
+            <div class="space-y-8">
+                <app-blur-fade [delay]="400">
+                    <div>
+                        <h2 class="section-badge">A Advogada</h2>
+                        <h1 class="main-title">Dra. Conceição Lopes</h1>
+                        <div class="title-underline"></div>
+                    </div>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="600">
+                    <div class="bio-content">
+                        <p>
+                            Com uma sólida formação e uma paixão intrínseca pela justiça, a Dra. Conceição Lopes
+                            dedica-se à advocacia com um compromisso inabalável com a ética e o profissionalismo.
+                        </p>
+                        <p>
+                            Ao longo de 7 anos de carreira, tem focado a sua atuação na prestação de um serviço
+                            jurídico de proximidade, onde cada cliente é tratado com a dignidade e a atenção
+                            personalizada que o seu caso merece.
+                        </p>
+                        <p>
+                            Especializada em diversas áreas do direito, desde o Direito da Família ao Direito Civil e
+                            Comercial, a sua missão é encontrar soluções eficazes e céleres para os desafios legais dos
+                            seus constituintes.
+                        </p>
+                    </div>
+                </app-blur-fade>
+
+                <!-- Values/Quick Facts -->
+                <app-blur-fade [delay]="800">
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="fact-item">
+                            <span class="fact-label">Formação</span>
+                            <span class="fact-value">Faculdade de Direito</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-label">Experiência</span>
+                            <span class="fact-value">7 Anos</span>
+                        </div>
+                    </div>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="1000" class="text-center w-full block">
+                    <a routerLink="/agendamento" class="btn-cta !mt-0">
+                        Marcar Consulta Individual
+                    </a>
+                </app-blur-fade>
+            </div>
+        </div>
+
+        <!-- Office Section -->
+        <div class="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div class="order-2 lg:order-1 space-y-8">
+                <app-blur-fade [delay]="200">
+                    <div>
+                        <h2 class="section-badge">O Espaço</h2>
+                        <h1 class="main-title">Sobre o escritório</h1>
+                        <div class="title-underline"></div>
+                    </div>
+                </app-blur-fade>
+
+                <app-blur-fade [delay]="400">
+                    <div class="bio-content">
+                        <p>
+                            Situado no coração do Dão, em Nelas, o escritório foi projetado para oferecer aos clientes
+                            um atendimento próximo e personalizado, refletindo os valores de seriedade e dedicação que
+                            marcam o nosso trabalho.
+                        </p>
+                        <p>
+                            A localização estratégica do escritório permite fácil acesso a quem precisa de serviços
+                            jurídicos na região, enquanto o ambiente é pensado para garantir conforto, privacidade e
+                            eficiência.
+                        </p>
+                        <p>
+                            Cada cliente é tratado com respeito e atenção, recebendo orientação clara e transparente em
+                            todas as etapas do processo. Um espaço onde a confiança e o profissionalismo se encontram,
+                            sempre com o objetivo de oferecer a melhor solução jurídica para cada situação. Visite-nos!
+                        </p>
+                    </div>
+                </app-blur-fade>
+            </div>
+
+            <app-blur-fade [delay]="600" class="order-1 lg:order-2">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 bg-secondary/10 rounded-[2rem] rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                    </div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl z-10 flex flex-col aspect-auto">
+                        <!-- Store Photo -->
+                        <div class="h-48 overflow-hidden border-b border-zinc-100">
+                            <img src="assets/fotoloja.jpg" alt="Escritório de Advocacia"
+                                class="w-full h-full object-cover transition-all duration-700 hover:scale-105" />
+                        </div>
+                        <!-- Google Maps Embed -->
+                        <div class="h-64 lg:h-80">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.543216892!2d-7.855!3d40.528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd232598380e!2sAv.%20da%20Liberdade%2089%2C%203520-001%20Nelas!5e0!3m2!1spt!2spt!4v17000000000"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="grayscale hover:grayscale-0 transition-all duration-700"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </app-blur-fade>
+        </div>
+
+        <!-- Mission Section -->
+        <div
+            class="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start bg-zinc-50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-24 rounded-[3rem]">
+            <app-blur-fade [delay]="200">
+                <div class="relative">
+                    <div
+                        class="relative rounded-3xl overflow-hidden shadow-2xl z-10 aspect-square max-w-md mx-auto lg:mx-0">
+                        <img src="assets/foto-estatua.jpg" alt="Missão e Valores"
+                            class="w-full h-full object-cover transition-all duration-700" />
+                    </div>
+                </div>
+            </app-blur-fade>
+
+            <div class="space-y-12">
+                <app-blur-fade [delay]="400">
+                    <div>
+                        <h2 class="section-badge">Compromisso</h2>
+                        <h1 class="main-title text-secondary">A Nossa Missão</h1>
+                        <div class="title-underline bg-primary"></div>
+                    </div>
+                </app-blur-fade>
+
+                <div class="space-y-6">
+                    <app-blur-fade [delay]="600">
+                        <div class="mission-item group">
+                            <div class="mission-icon">1</div>
+                            <p class="mission-text">Fazer da sua confiança a nossa maior responsabilidade</p>
+                        </div>
+                    </app-blur-fade>
+
+                    <app-blur-fade [delay]="800">
+                        <div class="mission-item group">
+                            <div class="mission-icon">2</div>
+                            <p class="mission-text">Defender os seus direitos com paixão e profissionalismo</p>
+                        </div>
+                    </app-blur-fade>
+
+                    <app-blur-fade [delay]="1000">
+                        <div class="mission-item group">
+                            <div class="mission-icon">3</div>
+                            <p class="mission-text">Atender às suas necessidades com um serviço de excelência</p>
+                        </div>
+                    </app-blur-fade>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

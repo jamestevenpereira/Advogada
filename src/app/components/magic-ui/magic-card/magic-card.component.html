@@ -1,0 +1,14 @@
+<div [class]="cn(
+    'group relative flex h-full w-full overflow-hidden rounded-3xl border border-zinc-200 bg-white text-black transition-all duration-300',
+    class()
+  )">
+    <!-- Main Content Layer -->
+    <div class="relative z-10 w-full">
+        <ng-content />
+    </div>
+
+    <!-- Spotlight Gradient Effect Layer -->
+    <div class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300 group-hover:opacity-100 opacity-0"
+        [style.background]="'radial-gradient(' + gradientSize() + 'px circle at ' + mouseX() + 'px ' + mouseY() + 'px, ' + gradientColor() + ', transparent 100%)'"
+        [style.opacity]="gradientOpacity()"></div>
+</div>

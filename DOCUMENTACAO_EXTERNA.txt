@@ -2,12 +2,17 @@ DOCUMENTAÇÃO DE FERRAMENTAS EXTERNAS - ADVOCACIA CONCEIÇÃO LOPES
 
 Este projeto utiliza as seguintes ferramentas e serviços externos para funcionamento e gestão:
 
-1. EmailJS (Envio de Agendamentos)
-   - Uso: Processamento do formulário de contacto/agendamento.
-   - Funcionamento: Envia os detalhes das consultas diretamente para o email profissional da advogada sem necessidade de servidor backend próprio.
+1. Firebase (Base de Dados e Segurança)
+   - Uso: Base de dados principal (Firestore) para armazenamento de leads e pedidos de agendamento.
+   - Funcionamento: Guarda de forma persistente e segura todos os dados preenchidos no formulário de agendamento.
+   - Configuração: Integrado através do '@angular/fire' e configurado no 'app.config.ts'.
+
+2. EmailJS (Envio de Agendamentos)
+   - Uso: Sistema de notificações por email.
+   - Funcionamento: Envia um alerta instantâneo para o email da advogada assim que um novo pedido é registado na base de dados.
    - Configuração: Integrado no frontend via '@emailjs/browser'.
 
-2. GitHub (Controlo de Versão e Repositório)
+3. GitHub (Controlo de Versão e Repositório)
    - Uso: Armazenamento do código fonte e histórico de alterações.
    - Repositório: https://github.com/jamestevenpereira/Advogada.git
    - Conta Associada: jamestevenpereira@gmail.com

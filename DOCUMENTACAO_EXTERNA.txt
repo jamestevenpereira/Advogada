@@ -1,0 +1,33 @@
+DOCUMENTAÇÃO DE FERRAMENTAS EXTERNAS - ADVOCACIA CONCEIÇÃO LOPES
+
+Este projeto utiliza as seguintes ferramentas e serviços externos para funcionamento e gestão:
+
+1. EmailJS (Envio de Agendamentos)
+   - Uso: Processamento do formulário de contacto/agendamento.
+   - Funcionamento: Envia os detalhes das consultas diretamente para o email profissional da advogada sem necessidade de servidor backend próprio.
+   - Configuração: Integrado no frontend via '@emailjs/browser'.
+
+2. GitHub (Controlo de Versão e Repositório)
+   - Uso: Armazenamento do código fonte e histórico de alterações.
+   - Repositório: https://github.com/jamestevenpereira/Advogada.git
+   - Conta Associada: jamestevenpereira@gmail.com
+
+3. Google Maps API (Localização)
+   - Uso: Mapa interativo na página "Sobre" para localização do escritório em Nelas.
+   - Funcionamento: Incorporação via IFrame para visualização geográfica.
+
+4. Lucide Icons (Design Visual)
+   - Uso: Biblioteca de ícones vetoriais utilizada em todo o website (Escala, Escudo, Utilizadores, etc.).
+   - Funcionamento: Pacote 'lucide-angular'.
+
+5. Google Fonts (Tipografia)
+   - Uso: Fontes 'Playfair Display' (serifada, para títulos) e 'Inter' (sans-serif, para corpo de texto).
+   - Funcionamento: Carregamento via CDN para garantir estética premium e legibilidade.
+
+6. Vercel (Hospedagem - Planeado)
+   - Uso: Publicação do website online.
+   - Funcionamento: Integração contínua com o repositório GitHub para atualizações automáticas.
+
+-------------------------------------------
+Documento gerado em: 04/02/2026
+-------------------------------------------

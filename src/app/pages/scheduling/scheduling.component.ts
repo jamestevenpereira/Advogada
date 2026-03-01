@@ -64,11 +64,19 @@ export class SchedulingComponent {
       Validators.required,
       Validators.pattern(/^\d{9,15}$/) // Only digits, 9 to 15 length
     ]],
-    date: ['', Validators.required],
+    date: ['', [Validators.required, this.weekendValidator]],
     time: ['', Validators.required],
     reason: ['', Validators.required],
     gdpr: [false, Validators.requiredTrue]
   });
+
+  /** Custom validator to prevent weekend selection */
+  private weekendValidator(control: any) {
+    if (!control.value) return null;
+    const date = new Date(control.value);
+    const day = date.getUTCDay();
+    return (day === 0 || day === 6) ? { weekend: true } : null;
+  }
 
   /** Loading state signal */
   isSubmitting = signal(false);
@@ -124,7 +132,6 @@ export class SchedulingComponent {
       await this.firebaseService.submitLead(leadData);
 
       // 3. Send email notification via EmailJS
-      // Note: This will use the placeholders until real IDs are provided
       try {
         await this.emailService.sendAppointmentEmail(leadData);
       } catch (emailError: any) {
@@ -135,10 +142,16 @@ export class SchedulingComponent {
       this.isSubmitting.set(false);
       this.submitted.set(true);
 
-      // Note: For actual email delivery, you should set up a Firebase Cloud Function
-      // that triggers when a new document is added to the 'leads' collection.
+      // 5. Scroll to success message
+      setTimeout(() => {
+        const element = document.getElementById('success-card');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
 
     } catch (error) {
+
       console.error('Submission error:', error);
       this.isSubmitting.set(false);
       alert('Ocorreu um erro ao enviar o seu pedido de forma segura. Por favor, tente novamente.');

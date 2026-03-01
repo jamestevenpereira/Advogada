@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +19,15 @@ import { CookieConsentComponent } from './components/cookie-consent/cookie-conse
   `,
   styles: [],
 })
-export class AppComponent { }
+export class AppComponent {
+  private router = inject(Router);
+
+  constructor() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      window.scrollTo(0, 0);
+    });
+  }
+}
+

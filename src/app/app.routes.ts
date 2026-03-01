@@ -1,17 +1,13 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { PracticeAreasComponent } from './pages/practice-areas/practice-areas.component';
-import { SchedulingComponent } from './pages/scheduling/scheduling.component';
-import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { CookiePolicyComponent } from './pages/cookie-policy/cookie-policy.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'sobre', component: AboutComponent },
-    { path: 'areas', component: PracticeAreasComponent },
-    { path: 'agendamento', component: SchedulingComponent },
-    { path: 'politica-privacidade', component: PrivacyPolicyComponent },
-    { path: 'politica-cookies', component: CookiePolicyComponent },
+    { path: 'sobre', loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent) },
+    { path: 'areas', loadComponent: () => import('./pages/practice-areas/practice-areas.component').then(m => m.PracticeAreasComponent) },
+    { path: 'agendamento', loadComponent: () => import('./pages/scheduling/scheduling.component').then(m => m.SchedulingComponent) },
+    { path: 'politica-privacidade', loadComponent: () => import('./pages/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent) },
+    { path: 'politica-cookies', loadComponent: () => import('./pages/cookie-policy/cookie-policy.component').then(m => m.CookiePolicyComponent) },
     { path: '**', redirectTo: '' }
 ];
+

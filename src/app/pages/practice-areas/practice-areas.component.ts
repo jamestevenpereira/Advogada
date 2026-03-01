@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BentoGridComponent, BentoCardComponent } from '../../components/magic-ui/bento-grid/bento-grid.component';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
 import { MagicCardComponent } from '../../components/magic-ui/magic-card/magic-card.component';
 import { BorderBeamComponent } from '../../components/magic-ui/border-beam/border-beam.component';
 import { LucideAngularModule, Heart, Scale, Briefcase, Building, Shield, Gavel } from 'lucide-angular';
+import { SeoService } from '../../services/seo.service';
 
 /**
  * PracticeAreasComponent showcases the various legal fields the firm specializes in.
@@ -29,9 +30,14 @@ export class PracticeAreasComponent {
   /** Icons used in the template */
   ScaleIcon = Scale;
 
-  /**
-   * List of specialized practice areas with descriptions and visual styles.
-   */
+  constructor() {
+    inject(SeoService).update({
+      title: 'Áreas de Direito — Família, Trabalho, Penal, Comercial',
+      description: 'Assessoria jurídica especializada em 6 áreas do direito em Nelas: Família, Civil, Trabalho, Comercial, Penal e Administrativo.',
+      canonical: 'https://www.conceicaolopesadvogada.pt/areas',
+    });
+  }
+
   practiceAreas = [
     {
       title: 'Direito da Família',

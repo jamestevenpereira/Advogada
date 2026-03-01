@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# No need to crawl legal boilerplate
+Disallow: /politica-privacidade
+Disallow: /politica-cookies
+
+Sitemap: https://www.conceicaolopesadvogada.pt/sitemap.xml

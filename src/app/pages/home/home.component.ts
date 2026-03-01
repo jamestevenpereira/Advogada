@@ -8,6 +8,7 @@ import { LucideAngularModule, ChevronRight, ShieldCheck, Scale, Users } from 'lu
 import { DotPatternComponent } from '../../components/magic-ui/dot-pattern/dot-pattern.component';
 import { ShinyButtonComponent } from '../../components/magic-ui/shiny-button/shiny-button.component';
 import { MeteorsComponent } from '../../components/magic-ui/meteors/meteors.component';
+import { SeoService } from '../../services/seo.service';
 
 /**
  * HomeComponent serves as the landing page for the website.

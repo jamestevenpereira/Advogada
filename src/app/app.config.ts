@@ -6,6 +6,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
 import { environment } from '../environments/environment';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -13,6 +14,6 @@ export const appConfig: ApplicationConfig = {
         provideRouter(routes),
         provideAnimations(),
         provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() => getFirestore())
+        provideFirestore(() => getFirestore()), provideClientHydration(withEventReplay())
     ]
 };

@@ -1,5 +1,5 @@
-import { Component, signal, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LucideAngularModule, Cookie } from 'lucide-angular';
 
@@ -20,14 +20,18 @@ export class CookieConsentComponent implements OnInit {
   /** Icons used in the template */
   Cookie = Cookie;
 
+  private platformId = inject(PLATFORM_ID);
+
   /**
    * Initializes the component and checks for existing consent.
    */
   ngOnInit(): void {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      // Small delay for better UX
-      setTimeout(() => this.showBanner.set(true), 1500);
+    if (isPlatformBrowser(this.platformId)) {
+      const consent = localStorage.getItem('cookieConsent');
+      if (!consent) {
+        // Small delay for better UX
+        setTimeout(() => this.showBanner.set(true), 1500);
+      }
     }
   }
 
@@ -35,7 +39,9 @@ export class CookieConsentComponent implements OnInit {
    * Marks cookies as accepted and hides the banner.
    */
   acceptCookies(): void {
-    localStorage.setItem('cookieConsent', 'accepted');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('cookieConsent', 'accepted');
+    }
     this.showBanner.set(false);
   }
 
@@ -43,7 +49,10 @@ export class CookieConsentComponent implements OnInit {
    * Marks cookies as declined and hides the banner.
    */
   declineCookies(): void {
-    localStorage.setItem('cookieConsent', 'declined');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('cookieConsent', 'declined');
+    }
     this.showBanner.set(false);
   }
 }
+

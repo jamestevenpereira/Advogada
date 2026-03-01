@@ -6,6 +6,7 @@ import { BorderBeamComponent } from '../../components/magic-ui/border-beam/borde
 import { LucideAngularModule, Send, Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle } from 'lucide-angular';
 import { FirebaseService } from '../../services/firebase.service';
 import { EmailService } from '../../services/email.service';
+import { SeoService } from '../../services/seo.service';
 
 /**
  * SchedulingComponent manages the appointment request form.
@@ -39,6 +40,14 @@ export class SchedulingComponent {
   private fb = inject(FormBuilder);
   private firebaseService = inject(FirebaseService);
   private emailService = inject(EmailService);
+
+  constructor() {
+    inject(SeoService).update({
+      title: 'Agendar Consulta Jurídica em Nelas',
+      description: 'Marque a sua consulta com a Dra. Conceição Lopes de forma rápida e segura. Atendimento personalizado em Nelas, Viseu.',
+      canonical: 'https://www.conceicaolopesadvogada.pt/agendamento',
+    });
+  }
 
   /** Main scheduling form group with validators. */
   schedulingForm = this.fb.group({

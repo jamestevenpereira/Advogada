@@ -1,5 +1,5 @@
-import { Component, input, signal, effect, ElementRef, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, input, signal, effect, ElementRef, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { cn } from '../../../utils/cn';
 
 /**
@@ -22,10 +22,15 @@ export class BlurFadeComponent {
   isVisible = signal(false);
 
   private el = inject(ElementRef);
+  private platformId = inject(PLATFORM_ID);
   protected cn = cn;
 
   constructor() {
     effect(() => {
+      if (!isPlatformBrowser(this.platformId)) {
+        return;
+      }
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -41,3 +46,4 @@ export class BlurFadeComponent {
     });
   }
 }
+

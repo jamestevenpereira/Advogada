@@ -18,8 +18,8 @@ import { SeoService } from '../../services/seo.service';
 export class AboutComponent {
   constructor() {
     inject(SeoService).update({
-      title: 'Sobre a Dra. Conceição Lopes — Advogada em Nelas',
-      description: 'Conheça o percurso, formação e valores da Dra. Conceição Lopes. 7 anos de carreira dedicados ao Direito da Família, Civil, Trabalho e Comercial em Nelas.',
+      title: 'Dra. Conceição Lopes | Advogada em Nelas',
+      description: 'Conheça a trajetória da Dra. Conceição Lopes, advogada sediada na Av. João XXIII em Nelas, com foco em Direito Civil, Família e Comercial.',
       canonical: 'https://www.conceicaolopesadvogada.pt/sobre',
     });
   }

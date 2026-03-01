@@ -3,7 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
 import { BorderBeamComponent } from '../../components/magic-ui/border-beam/border-beam.component';
-
+import { CalendarComponent } from '../../components/ui/calendar/calendar.component';
 import { LucideAngularModule, Send, Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle } from 'lucide-angular';
 import { FirebaseService } from '../../services/firebase.service';
 import { EmailService } from '../../services/email.service';
@@ -11,13 +11,6 @@ import { SeoService } from '../../services/seo.service';
 
 /**
  * SchedulingComponent manages the appointment request form.
- * 
- * Features:
- * - Reactive Form with comprehensive validation.
- * - Integration with Firebase Firestore for secure data storage.
- * - Success/Error states with visual feedback.
- * - GDPR compliance checkbox.
- * - Standard Angular structure (separate HTML/SCSS/Spec).
  */
 @Component({
   selector: 'app-scheduling',
@@ -28,7 +21,8 @@ import { SeoService } from '../../services/seo.service';
     ReactiveFormsModule,
     BlurFadeComponent,
     BorderBeamComponent,
-    LucideAngularModule
+    LucideAngularModule,
+    CalendarComponent
   ],
   templateUrl: './scheduling.component.html',
   styleUrl: './scheduling.component.scss'
@@ -43,13 +37,13 @@ export class SchedulingComponent {
   private emailService = inject(EmailService);
   private platformId = inject(PLATFORM_ID);
 
-
   constructor() {
     inject(SeoService).update({
       title: 'Agendar Consulta Jurídica em Nelas',
-      description: 'Marque a sua consulta com a Dra. Conceição Lopes de forma rápida e segura. Atendimento personalizado em Nelas, Viseu.',
+      description: 'Marque a sua consulta com a Dra. Conceição Lopes de forma rápida e segura. Escritório na Av. João XXIII em Nelas, Viseu.',
       canonical: 'https://www.conceicaolopesadvogada.pt/agendamento',
     });
+
   }
 
   /** Main scheduling form group with validators. */
@@ -67,18 +61,16 @@ export class SchedulingComponent {
       Validators.required,
       Validators.pattern(/^\d{9,15}$/) // Only digits, 9 to 15 length
     ]],
-    date: ['', [Validators.required, this.weekendValidator]],
+    date: ['', Validators.required],
     time: ['', Validators.required],
     reason: ['', Validators.required],
     gdpr: [false, Validators.requiredTrue]
   });
 
-  /** Custom validator to prevent weekend selection */
-  private weekendValidator(control: any) {
-    if (!control.value) return null;
-    const date = new Date(control.value);
-    const day = date.getUTCDay();
-    return (day === 0 || day === 6) ? { weekend: true } : null;
+  /** Updates form date when custom calendar emits a value */
+  onDateChange(isoDate: string): void {
+    this.schedulingForm.get('date')?.setValue(isoDate);
+    this.schedulingForm.get('date')?.markAsTouched();
   }
 
   /** Loading state signal */
@@ -155,9 +147,7 @@ export class SchedulingComponent {
         }, 100);
       }
 
-
     } catch (error) {
-
       console.error('Submission error:', error);
       this.isSubmitting.set(false);
       alert('Ocorreu um erro ao enviar o seu pedido de forma segura. Por favor, tente novamente.');

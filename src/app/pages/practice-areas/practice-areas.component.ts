@@ -32,8 +32,8 @@ export class PracticeAreasComponent {
 
   constructor() {
     inject(SeoService).update({
-      title: 'Áreas de Direito — Família, Trabalho, Penal, Comercial',
-      description: 'Assessoria jurídica especializada em 6 áreas do direito em Nelas: Família, Civil, Trabalho, Comercial, Penal e Administrativo.',
+      title: 'Áreas de Prática Jurídica | Nelas & Viseu',
+      description: 'Serviços jurídicos especializados em Direito Civil, Família, Sucessões e Criminal. Atendimento personalizado no escritório em Nelas.',
       canonical: 'https://www.conceicaolopesadvogada.pt/areas',
     });
   }

@@ -153,27 +153,60 @@
                                 </select>
                             </div>
                         </div>
-                        [... lines 154-186 omitted ...]
-                        } @else {
-                        <!-- Success State -->
-                        <app-blur-fade>
-                            <div id="success-card" class="success-container">
-                                <div class="success-icon-wrapper">
-                                    <lucide-icon [name]="CheckCircleIcon" class="w-10 h-10 text-secondary" />
-                                </div>
-                                <h3 class="success-title">Pedido Recebido!</h3>
 
-                                <p class="success-text">
-                                    Obrigado pelo seu pedido, {{ schedulingForm.value.firstName }}. Entraremos em
-                                    contacto
-                                    consigo em breve para confirmar a data e hora.
-                                </p>
-                                <button (click)="resetForm()" class="btn-reset">
-                                    Fazer novo agendamento
-                                </button>
-                            </div>
-                        </app-blur-fade>
-                        }
+                        <!-- Reason Field -->
+                        <div class="form-group">
+                            <label class="form-label"
+                                [class.text-red-500]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched">
+                                <lucide-icon [name]="MessageIcon" class="w-4 h-4" /> Motivo da Consulta *
+                            </label>
+                            <textarea formControlName="reason" rows="4" class="form-textarea"
+                                [class.border-red-500]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched"
+                                placeholder="Descreva brevemente o assunto..."></textarea>
+                        </div>
+
+                        <!-- GDPR Consent -->
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" formControlName="gdpr" id="gdpr" class="gdpr-checkbox" />
+                            <label for="gdpr" class="gdpr-label"
+                                [class.text-red-500]="schedulingForm.get('gdpr')?.invalid && schedulingForm.get('gdpr')?.touched">
+                                GDPR - Eu concordo que este site armazene as informações enviadas por mim de forma a que
+                                se proceda à resposta da informação solicitada. *
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" [disabled]="schedulingForm.invalid || isSubmitting()" class="btn-submit">
+                            @if (isSubmitting()) {
+                            <div class="loading-spinner"></div>
+                            A enviar...
+                            } @else {
+                            <lucide-icon [name]="SendIcon" class="w-5 h-5" /> Submeter Pedido
+                            }
+                        </button>
+                    </form>
+                </app-blur-fade>
+                } @else {
+                <!-- Success State -->
+                <app-blur-fade>
+                    <div id="success-card" class="success-container">
+                        <div class="success-icon-wrapper">
+                            <lucide-icon [name]="CheckCircleIcon" class="w-10 h-10 text-secondary" />
+                        </div>
+                        <h3 class="success-title">Pedido Recebido!</h3>
+
+
+                        <p class="success-text">
+                            Obrigado pelo seu pedido, {{ schedulingForm.value.firstName }}. Entraremos em
+                            contacto
+                            consigo em breve para confirmar a data e hora.
+                        </p>
+                        <button (click)="resetForm()" class="btn-reset">
+                            Fazer novo agendamento
+                        </button>
+                    </div>
+                </app-blur-fade>
+                }
             </div>
         </div>
     </div>

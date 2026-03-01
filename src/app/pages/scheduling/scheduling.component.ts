@@ -1,8 +1,9 @@
-import { Component, signal, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
 import { BorderBeamComponent } from '../../components/magic-ui/border-beam/border-beam.component';
+
 import { LucideAngularModule, Send, Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle } from 'lucide-angular';
 import { FirebaseService } from '../../services/firebase.service';
 import { EmailService } from '../../services/email.service';
@@ -40,6 +41,8 @@ export class SchedulingComponent {
   private fb = inject(FormBuilder);
   private firebaseService = inject(FirebaseService);
   private emailService = inject(EmailService);
+  private platformId = inject(PLATFORM_ID);
+
 
   constructor() {
     inject(SeoService).update({
@@ -143,12 +146,15 @@ export class SchedulingComponent {
       this.submitted.set(true);
 
       // 5. Scroll to success message
-      setTimeout(() => {
-        const element = document.getElementById('success-card');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }, 100);
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          const element = document.getElementById('success-card');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
+      }
+
 
     } catch (error) {
 

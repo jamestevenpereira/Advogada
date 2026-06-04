@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /politica-privacidade
+Disallow: /politica-cookies
 
 Sitemap: https://www.conceicaolopesadvogada.pt/sitemap.xml

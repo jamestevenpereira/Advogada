@@ -1,4 +1,4 @@
-import { Component, inject, DOCUMENT } from '@angular/core';
+import { Component, inject, DOCUMENT, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { WordRotateComponent } from '../../components/magic-ui/word-rotate/word-rotate.component';
@@ -25,8 +25,9 @@ import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnDestroy {
   private router = inject(Router);
+  private doc = inject(DOCUMENT);
 
   ChevronRight = ChevronRight;
   ShieldCheck = ShieldCheck;
@@ -44,7 +45,7 @@ export class HomeComponent {
     },
     {
       q: 'Atende clientes fora de Nelas?',
-      a: 'Sim. O escritório serve clientes em todo o Distrito de Viseu, incluindo Viseu, Santa Comba Dão, Carregal do Sal e Oliveira do Hospital.'
+      a: 'Sim. O escritório serve clientes em todo o Distrito de Viseu, incluindo Viseu, Santa Comba Dão, Tondela e Carregal do Sal.'
     },
     {
       q: 'Quanto tempo demora um processo de divórcio?',
@@ -67,9 +68,8 @@ export class HomeComponent {
       canonical: 'https://www.conceicaolopesadvogada.pt/',
     });
 
-    const doc = inject(DOCUMENT);
-    if (!doc.querySelector('script[data-faq-schema]')) {
-      const script = doc.createElement('script');
+    if (!this.doc.querySelector('script[data-faq-schema]')) {
+      const script = this.doc.createElement('script');
       script.type = 'application/ld+json';
       script.setAttribute('data-faq-schema', 'true');
       script.text = JSON.stringify({
@@ -81,8 +81,12 @@ export class HomeComponent {
           acceptedAnswer: { '@type': 'Answer', text: faq.a }
         }))
       });
-      doc.head.appendChild(script);
+      this.doc.head.appendChild(script);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.doc.querySelector('script[data-faq-schema]')?.remove();
   }
 
   schedulingRedirect() {

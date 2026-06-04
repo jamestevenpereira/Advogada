@@ -24,11 +24,10 @@ describe('PracticeAreasComponent', () => {
         expect(component.practiceAreas.length).toBeGreaterThan(0);
     });
 
-    it('should use h2 for the main section title, not h1', () => {
+    it('should have exactly one h1 with the page title', () => {
         const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('h1')).toBeNull();
-        const h2s = Array.from(compiled.querySelectorAll('h2'));
-        const areasHeading = h2s.find(el => el.textContent?.includes('Áreas de Especialização'));
-        expect(areasHeading).toBeTruthy();
+        const h1 = compiled.querySelector('h1.main-title');
+        expect(h1?.textContent?.trim()).toContain('Áreas de Especialização');
+        expect(compiled.querySelectorAll('h1').length).toBe(1);
     });
 });

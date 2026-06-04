@@ -1,0 +1,48 @@
+<section class="py-24 bg-zinc-50 border-t border-zinc-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <app-blur-fade [delay]="100">
+            <div class="text-center mb-16">
+                <h2 class="section-badge">Perguntas Frequentes</h2>
+                <div class="title-accent"></div>
+                <p class="section-description mt-4">
+                    As dúvidas mais comuns sobre os nossos serviços jurídicos.
+                </p>
+            </div>
+        </app-blur-fade>
+
+        <div class="space-y-3">
+            <app-blur-fade *ngFor="let faq of faqs; let i = index" [delay]="200 + i * 80">
+                <div class="border border-zinc-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                    <button
+                        data-faq-button
+                        (click)="toggle(i)"
+                        class="w-full flex justify-between items-center px-6 py-4 text-left text-zinc-900 font-medium hover:bg-zinc-50 transition-colors duration-150"
+                        [attr.aria-expanded]="openIndex() === i"
+                        [attr.aria-controls]="'faq-answer-' + i">
+                        <span>{{ faq.q }}</span>
+                        <lucide-icon
+                            [name]="ChevronDown"
+                            class="w-5 h-5 text-secondary shrink-0 transition-transform duration-200"
+                            [class.rotate-180]="openIndex() === i" />
+                    </button>
+                    <div
+                        *ngIf="openIndex() === i"
+                        data-faq-answer
+                        [id]="'faq-answer-' + i"
+                        class="px-6 pb-5 pt-2 text-zinc-600 leading-relaxed border-t border-zinc-100 text-sm">
+                        {{ faq.a }}
+                    </div>
+                </div>
+            </app-blur-fade>
+        </div>
+
+        <app-blur-fade [delay]="800">
+            <div class="text-center mt-12">
+                <a routerLink="/agendamento" class="btn-primary">
+                    Agendar Consulta
+                </a>
+            </div>
+        </app-blur-fade>
+    </div>
+</section>

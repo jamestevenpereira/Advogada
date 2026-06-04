@@ -44,36 +44,61 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Conceição Lopes — Advogada",
-    "url": "https://www.conceicaolopesadvogada.pt",
-    "logo": "https://www.conceicaolopesadvogada.pt/assets/logo.png",
-    "image": "https://www.conceicaolopesadvogada.pt/assets/advogada.jpg",
-    "description": "Escritório de advocacia em Nelas especializado em Direito da Família, Civil, Trabalho e Comercial.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. da Liberdade 89",
-      "addressLocality": "Nelas",
-      "postalCode": "3520-001",
-      "addressCountry": "PT"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.528,
-      "longitude": -7.855
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
+        "@type": "LegalService",
+        "name": "Conceição Lopes — Advogada",
+        "url": "https://www.conceicaolopesadvogada.pt",
+        "logo": "https://www.conceicaolopesadvogada.pt/assets/logo.png",
+        "image": "https://www.conceicaolopesadvogada.pt/assets/advogada.jpg",
+        "description": "Escritório de advocacia em Nelas especializado em Direito da Família, Civil, Trabalho, Comercial, Penal e Administrativo. Servindo todo o Distrito de Viseu.",
+        "telephone": "+351 910 322 893",
+        "email": "conceicao-66631c@adv.oa.pt",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. João XXIII 2 R/C",
+          "addressLocality": "Nelas",
+          "postalCode": "3520-059",
+          "addressCountry": "PT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.534,
+          "longitude": -7.855
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Nelas" },
+          { "@type": "City", "name": "Viseu" },
+          { "@type": "AdministrativeArea", "name": "Distrito de Viseu" },
+          { "@type": "City", "name": "Santa Comba Dão" },
+          { "@type": "City", "name": "Carregal do Sal" },
+          { "@type": "City", "name": "Oliveira do Hospital" }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/concei%C3%A7%C3%A3o-lopes-a63996319/",
+          "https://www.facebook.com/p/Concei%C3%A7%C3%A3o-Lopes-Advogada-61555354289580/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.conceicaolopesadvogada.pt/#lawyer",
+        "name": "Conceição Lopes",
+        "jobTitle": "Advogada",
+        "description": "Advogada inscrita na Ordem dos Advogados com Cédula n.º 66631C, com 7 anos de experiência no Distrito de Viseu.",
+        "url": "https://www.conceicaolopesadvogada.pt/sobre",
+        "image": "https://www.conceicaolopesadvogada.pt/assets/advogada.jpg",
+        "worksFor": { "@id": "https://www.conceicaolopesadvogada.pt" }
       }
-    ],
-    "areaServed": {
-      "@type": "City",
-      "name": "Nelas"
-    }
+    ]
   }
   </script>
 </head>

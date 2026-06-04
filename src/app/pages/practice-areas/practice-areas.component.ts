@@ -41,37 +41,37 @@ export class PracticeAreasComponent {
   practiceAreas = [
     {
       title: 'Direito da Família',
-      description: 'Divórcios, regulação das responsabilidades parentais, partilhas e inventários.',
+      description: 'Divórcios, regulação do poder parental, pensão de alimentos, partilhas e inventários. Acompanhamento humano e discreto nos momentos mais difíceis da sua vida familiar.',
       icon: Heart,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito Civil',
-      description: 'Contratos, responsabilidade civil e direitos reais.',
+      description: 'Elaboração e revisão de contratos, responsabilidade civil, direitos reais e posse. Defendemos os seus interesses em litígios civis com rigor e eficácia.',
       icon: Scale,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito do Trabalho',
-      description: 'Contestação de despedimentos, contratos de trabalho e direitos dos trabalhadores.',
+      description: 'Despedimento ilícito, rescisão com justa causa, assédio laboral, acidentes de trabalho e negociação de indemnizações. Defenda os seus direitos enquanto trabalhador.',
       icon: Briefcase,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito Comercial',
-      description: 'Constituição de sociedades, assessoria a empresas e insolvências.',
+      description: 'Constituição e dissolução de sociedades, contratos comerciais, recuperação de créditos e processos de insolvência. Assessoria jurídica para empresas e empresários do Distrito de Viseu.',
       icon: Building,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito Penal',
-      description: 'Defesa e acompanhamento em processos-crime.',
+      description: 'Defesa em processos-crime, constituição como assistente, recursos e habeas corpus. Representação discreta e eficaz em todas as fases do processo penal.',
       icon: Shield,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito Administrativo',
-      description: 'Relações com entidades públicas e contencioso administrativo.',
+      description: 'Impugnação de atos administrativos, contencioso tributário, licenciamentos e relações com entidades públicas. Defendemos os seus direitos face à Administração Pública.',
       icon: Gavel,
       class: 'md:col-span-1'
     }

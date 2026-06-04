@@ -98,7 +98,8 @@
                         ],
                         "scripts": [],
                         "loader": {
-                            ".html": "text"
+                            ".html": "text",
+                            ".scss": "text"
                         }
                     }
                 }

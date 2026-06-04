@@ -21,8 +21,15 @@ describe('AboutComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should have the correct lawyer name in title', () => {
+    it('should display the lawyer name in an h2 heading', () => {
         const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('h1')?.textContent).toContain('Dra. Conceição Lopes');
+        const h2s = Array.from(compiled.querySelectorAll('h2'));
+        const nameHeading = h2s.find(el => el.textContent?.includes('Dra. Conceição Lopes'));
+        expect(nameHeading).toBeTruthy();
+    });
+
+    it('should have no h1 tag (heading hierarchy: h2 used within sections)', () => {
+        const compiled = fixture.nativeElement as HTMLElement;
+        expect(compiled.querySelector('h1')).toBeNull();
     });
 });

@@ -23,4 +23,12 @@ describe('PracticeAreasComponent', () => {
     it('should list multiple practice areas', () => {
         expect(component.practiceAreas.length).toBeGreaterThan(0);
     });
+
+    it('should use h2 for the main section title, not h1', () => {
+        const compiled = fixture.nativeElement as HTMLElement;
+        expect(compiled.querySelector('h1')).toBeNull();
+        const h2s = Array.from(compiled.querySelectorAll('h2'));
+        const areasHeading = h2s.find(el => el.textContent?.includes('Áreas de Especialização'));
+        expect(areasHeading).toBeTruthy();
+    });
 });

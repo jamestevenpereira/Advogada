@@ -32,8 +32,8 @@ export class PracticeAreasComponent {
 
   constructor() {
     inject(SeoService).update({
-      title: 'Áreas de Prática Jurídica | Nelas & Viseu',
-      description: 'Serviços jurídicos especializados em Direito Civil, Família, Sucessões e Criminal. Atendimento personalizado no escritório em Nelas.',
+      title: 'Serviços Jurídicos em Nelas e Viseu',
+      description: 'Serviços jurídicos em Nelas e Viseu: Direito da Família, Civil, Penal, Trabalho, Comercial e Administrativo. Consulta personalizada com a Dra. Conceição Lopes.',
       canonical: 'https://www.conceicaolopesadvogada.pt/areas',
     });
   }

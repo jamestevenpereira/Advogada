@@ -1,16 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
+import { SeoService } from '../../services/seo.service';
 import { provideRouter } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HomeComponent', () => {
     let component: HomeComponent;
     let fixture: ComponentFixture<HomeComponent>;
+    let seoSpy: jasmine.SpyObj<SeoService>;
 
     beforeEach(async () => {
+        seoSpy = jasmine.createSpyObj('SeoService', ['update']);
+
         await TestBed.configureTestingModule({
             imports: [HomeComponent, NoopAnimationsModule],
-            providers: [provideRouter([])]
+            providers: [
+                provideRouter([]),
+                { provide: SeoService, useValue: seoSpy }
+            ]
         }).compileComponents();
 
         fixture = TestBed.createComponent(HomeComponent);
@@ -29,5 +36,13 @@ describe('HomeComponent', () => {
 
     it('should have testimonials', () => {
         expect(component.testimonials.length).toBeGreaterThan(0);
+    });
+
+    it('should call SeoService.update with Viseu-targeting title and description', () => {
+        expect(seoSpy.update).toHaveBeenCalledWith(jasmine.objectContaining({
+            title: jasmine.stringContaining('Viseu'),
+            description: jasmine.stringContaining('Viseu'),
+            canonical: 'https://www.conceicaolopesadvogada.pt/'
+        }));
     });
 });

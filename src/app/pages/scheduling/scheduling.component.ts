@@ -40,7 +40,7 @@ export class SchedulingComponent {
   constructor() {
     inject(SeoService).update({
       title: 'Agendar Consulta Jurídica em Nelas',
-      description: 'Marque a sua consulta com a Dra. Conceição Lopes de forma rápida e segura. Escritório na Av. João XXIII em Nelas, Viseu.',
+      description: 'Agende a sua consulta jurídica com a Dra. Conceição Lopes em Nelas. Atendimento de 2ª a 6ª, 9h–18h. Rápido, fácil e sem compromisso.',
       canonical: 'https://www.conceicaolopesadvogada.pt/agendamento',
     });
 

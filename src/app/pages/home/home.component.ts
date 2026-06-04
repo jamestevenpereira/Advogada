@@ -41,6 +41,14 @@ export class HomeComponent {
   Scale = Scale;
   Users = Users;
 
+  constructor() {
+    inject(SeoService).update({
+      title: 'Advogada em Nelas e Viseu',
+      description: 'Dra. Conceição Lopes, advogada com 7 anos de experiência a servir Nelas, Viseu e o Distrito de Viseu. Especializada em Direito da Família, Civil, Trabalho e Comercial. Agende a sua consulta.',
+      canonical: 'https://www.conceicaolopesadvogada.pt/',
+    });
+  }
+
   /** Redirects to scheduling page */
   schedulingRedirect() {
     this.router.navigate(['/agendamento']);

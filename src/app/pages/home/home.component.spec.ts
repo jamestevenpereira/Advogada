@@ -3,6 +3,7 @@ import { HomeComponent } from './home.component';
 import { SeoService } from '../../services/seo.service';
 import { provideRouter } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { DOCUMENT } from '@angular/common';
 
 describe('HomeComponent', () => {
     let component: HomeComponent;
@@ -16,7 +17,8 @@ describe('HomeComponent', () => {
             imports: [HomeComponent, NoopAnimationsModule],
             providers: [
                 provideRouter([]),
-                { provide: SeoService, useValue: seoSpy }
+                { provide: SeoService, useValue: seoSpy },
+                { provide: DOCUMENT, useValue: document }
             ]
         }).compileComponents();
 
@@ -44,5 +46,9 @@ describe('HomeComponent', () => {
             description: jasmine.stringContaining('Viseu'),
             canonical: 'https://www.conceicaolopesadvogada.pt/'
         }));
+    });
+
+    it('should have 6 FAQ items', () => {
+        expect(component.faqs.length).toBe(6);
     });
 });

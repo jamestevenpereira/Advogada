@@ -39,8 +39,8 @@ export class SchedulingComponent {
 
   constructor() {
     inject(SeoService).update({
-      title: 'Agendar Consulta Jurídica em Nelas',
-      description: 'Agende a sua consulta jurídica com a Dra. Conceição Lopes em Nelas. Atendimento de 2ª a 6ª, 9h–18h. Rápido, fácil e sem compromisso.',
+      title: 'Agendar Consulta em Nelas',
+      description: 'Agende a sua consulta jurídica com a Dra. Conceição Lopes em Nelas. Atendimento de 2ª a 6ª, 9h–18h. Disponível para clientes em todo o Distrito de Viseu.',
       canonical: 'https://www.conceicaolopesadvogada.pt/agendamento',
     });
 

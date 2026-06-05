@@ -2,6 +2,7 @@ import { Component, inject, DOCUMENT, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
+import { MarqueeComponent } from '../../components/magic-ui/marquee/marquee.component';
 import { LucideAngularModule, ChevronRight, ShieldCheck, Scale, Users, Phone } from 'lucide-angular';
 import { SeoService } from '../../services/seo.service';
 import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
@@ -13,6 +14,7 @@ import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
     CommonModule,
     RouterLink,
     BlurFadeComponent,
+    MarqueeComponent,
     LucideAngularModule,
     FaqComponent
   ],

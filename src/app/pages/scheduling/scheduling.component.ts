@@ -1,6 +1,7 @@
 import { Component, signal, inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
 import { BorderBeamComponent } from '../../components/magic-ui/border-beam/border-beam.component';
 import { CalendarComponent } from '../../components/ui/calendar/calendar.component';
@@ -9,9 +10,6 @@ import { FirebaseService } from '../../services/firebase.service';
 import { EmailService } from '../../services/email.service';
 import { SeoService } from '../../services/seo.service';
 
-/**
- * SchedulingComponent manages the appointment request form.
- */
 @Component({
   selector: 'app-scheduling',
   standalone: true,
@@ -19,6 +17,7 @@ import { SeoService } from '../../services/seo.service';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterLink,
     BlurFadeComponent,
     BorderBeamComponent,
     LucideAngularModule,
@@ -28,10 +27,6 @@ import { SeoService } from '../../services/seo.service';
   styleUrl: './scheduling.component.scss'
 })
 export class SchedulingComponent {
-  // --------------------------------------------------------------------------
-  // Properties & DI
-  // --------------------------------------------------------------------------
-
   private fb = inject(FormBuilder);
   private firebaseService = inject(FirebaseService);
   private emailService = inject(EmailService);
@@ -43,14 +38,12 @@ export class SchedulingComponent {
       description: 'Agende a sua consulta jurídica com a Dra. Conceição Lopes em Nelas. Atendimento de 2ª a 6ª, 9h–18h. Disponível para clientes em todo o Distrito de Viseu.',
       canonical: 'https://www.conceicaolopesadvogada.pt/agendamento',
     });
-
   }
 
-  /** Main scheduling form group with validators. */
   schedulingForm = this.fb.group({
     firstName: ['', [
       Validators.required,
-      Validators.pattern(/^[a-zA-ZÀ-ÿ\s'-]+$/) // Letters and international characters
+      Validators.pattern(/^[a-zA-ZÀ-ÿ\s'-]+$/)
     ]],
     lastName: ['', [
       Validators.required,
@@ -59,7 +52,7 @@ export class SchedulingComponent {
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [
       Validators.required,
-      Validators.pattern(/^\d{9,15}$/) // Only digits, 9 to 15 length
+      Validators.pattern(/^\d{9}$/)
     ]],
     date: ['', Validators.required],
     time: ['', Validators.required],
@@ -67,24 +60,19 @@ export class SchedulingComponent {
     gdpr: [false, Validators.requiredTrue]
   });
 
-  /** Updates form date when custom calendar emits a value */
   onDateChange(isoDate: string): void {
     this.schedulingForm.get('date')?.setValue(isoDate);
     this.schedulingForm.get('date')?.markAsTouched();
   }
 
-  /** Loading state signal */
   isSubmitting = signal(false);
-
-  /** Submission success state signal */
   submitted = signal(false);
+  submitError = signal<string | null>(null);
 
-  /** Returns today's date in YYYY-MM-DD format for the calendar 'min' attribute */
   get minDate(): string {
     return new Date().toISOString().split('T')[0];
   }
 
-  /** Icons for the template */
   SendIcon = Send;
   CalendarIcon = Calendar;
   ClockIcon = Clock;
@@ -94,20 +82,13 @@ export class SchedulingComponent {
   MessageIcon = MessageSquare;
   CheckCircleIcon = CheckCircle;
 
-  // --------------------------------------------------------------------------
-  // Methods
-  // --------------------------------------------------------------------------
-
-  /**
-   * Handles form submission.
-   * Validates the form and triggers the secure Firebase submission.
-   */
   async onSubmit(): Promise<void> {
     if (this.schedulingForm.invalid) {
       return;
     }
 
     this.isSubmitting.set(true);
+    this.submitError.set(null);
 
     const leadData = {
       firstName: this.schedulingForm.value.firstName!,
@@ -120,24 +101,17 @@ export class SchedulingComponent {
     };
 
     try {
-      // 1. Log simulation (for debug)
-      console.log('Submitting lead to Firestore secure database...', leadData);
-
-      // 2. Perform secure submission via Firebase Service
       await this.firebaseService.submitLead(leadData);
 
-      // 3. Send email notification via EmailJS
       try {
         await this.emailService.sendAppointmentEmail(leadData);
-      } catch (emailError: any) {
-        console.warn('Email notification failed, but data was saved to database:', emailError);
+      } catch {
+        // Email failure is non-blocking; lead is already saved
       }
 
-      // 4. Update UI states
       this.isSubmitting.set(false);
       this.submitted.set(true);
 
-      // 5. Scroll to success message
       if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => {
           const element = document.getElementById('success-card');
@@ -147,27 +121,21 @@ export class SchedulingComponent {
         }, 100);
       }
 
-    } catch (error) {
-      console.error('Submission error:', error);
+    } catch {
       this.isSubmitting.set(false);
-      alert('Ocorreu um erro ao enviar o seu pedido de forma segura. Por favor, tente novamente.');
+      this.submitError.set('Ocorreu um erro ao enviar o seu pedido. Por favor, tente novamente ou contacte-nos por telefone: +351 910 322 893.');
     }
   }
 
-  /**
-   * Filters non-numeric characters from the phone input.
-   */
   filterPhone(event: Event): void {
     const input = event.target as HTMLInputElement;
-    const value = input.value.replace(/\D/g, ''); // Remove non-digits
+    const value = input.value.replace(/\D/g, '');
     this.schedulingForm.get('phone')?.setValue(value, { emitEvent: false });
   }
 
-  /**
-   * Resets the form and submission state.
-   */
   resetForm(): void {
     this.submitted.set(false);
+    this.submitError.set(null);
     this.schedulingForm.reset();
   }
 }

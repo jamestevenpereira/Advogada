@@ -4,7 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { WordRotateComponent } from '../../components/magic-ui/word-rotate/word-rotate.component';
 import { MarqueeComponent } from '../../components/magic-ui/marquee/marquee.component';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
-import { LucideAngularModule, ChevronRight, ShieldCheck, Scale, Users } from 'lucide-angular';
+import { LucideAngularModule, ChevronRight, ShieldCheck, Scale, Users, Phone } from 'lucide-angular';
 import { ShinyButtonComponent } from '../../components/magic-ui/shiny-button/shiny-button.component';
 import { SeoService } from '../../services/seo.service';
 import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
@@ -33,6 +33,7 @@ export class HomeComponent implements OnDestroy {
   ShieldCheck = ShieldCheck;
   Scale = Scale;
   Users = Users;
+  Phone = Phone;
 
   faqs: FaqItem[] = [
     {

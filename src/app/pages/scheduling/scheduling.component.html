@@ -19,7 +19,7 @@
             <div class="lg:col-span-2 flex flex-col justify-between h-full space-y-4">
                 <app-blur-fade [delay]="200" class="flex-1 flex flex-col">
                     <div class="contact-card flex-1 flex flex-col items-center justify-center text-center">
-                        <lucide-icon [name]="PhoneIcon" class="card-icon" />
+                        <lucide-icon [name]="PhoneIcon" class="card-icon" aria-hidden="true" />
                         <h4 class="card-title">Telefone</h4>
                         <p class="card-value">+351 910 322 893 *</p>
                         <p class="card-disclaimer">* Chamada para rede móvel nacional</p>
@@ -28,7 +28,7 @@
 
                 <app-blur-fade [delay]="300" class="flex-1 flex flex-col">
                     <div class="contact-card flex-1 flex flex-col items-center justify-center text-center">
-                        <lucide-icon [name]="MailIcon" class="card-icon" />
+                        <lucide-icon [name]="MailIcon" class="card-icon" aria-hidden="true" />
                         <h4 class="card-title">Email</h4>
                         <p class="card-value whitespace-nowrap overflow-visible">conceicao-66631c&#64;adv.oa.pt</p>
                     </div>
@@ -36,7 +36,7 @@
 
                 <app-blur-fade [delay]="350" class="flex-1 flex flex-col">
                     <div class="contact-card flex-1 flex flex-col items-center justify-center text-center !mb-0">
-                        <lucide-icon [name]="ClockIcon" class="card-icon" />
+                        <lucide-icon [name]="ClockIcon" class="card-icon" aria-hidden="true" />
                         <h4 class="card-title">Horário</h4>
                         <p class="card-value">2ª a 6ª feira<br />9h - 18h</p>
                     </div>
@@ -48,34 +48,41 @@
                 @if (!submitted()) {
                 <app-blur-fade [delay]="400" class="h-full">
                     <form [formGroup]="schedulingForm" (ngSubmit)="onSubmit()"
-                        class="scheduling-form h-full relative overflow-hidden">
+                        class="scheduling-form h-full relative overflow-hidden" novalidate>
                         <!-- Border Beam for 'wow' effect -->
                         <app-border-beam [duration]="12" [size]="300" />
+
                         <!-- Name Fields -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="form-group">
-                                <label class="form-label"
+                                <label for="sched-firstName" class="form-label"
                                     [class.text-red-500]="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched">
-                                    <lucide-icon [name]="UserIcon" class="w-4 h-4" /> Primeiro Nome *
+                                    <lucide-icon [name]="UserIcon" class="w-4 h-4" aria-hidden="true" /> Primeiro Nome *
                                 </label>
-                                <input type="text" formControlName="firstName" class="form-input"
+                                <input type="text" id="sched-firstName" formControlName="firstName" class="form-input"
                                     [class.border-red-500]="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched"
+                                    [attr.aria-describedby]="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched ? 'sched-firstName-error' : null"
+                                    aria-required="true"
                                     placeholder="Ex: Maria" />
                                 <p *ngIf="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched"
-                                    class="text-[10px] text-red-500 mt-1">
+                                    id="sched-firstName-error"
+                                    class="text-[10px] text-red-500 mt-1" role="alert">
                                     Nome inválido (use apenas letras).
                                 </p>
                             </div>
                             <div class="form-group">
-                                <label class="form-label"
+                                <label for="sched-lastName" class="form-label"
                                     [class.text-red-500]="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched">
                                     Último Nome *
                                 </label>
-                                <input type="text" formControlName="lastName" class="form-input"
+                                <input type="text" id="sched-lastName" formControlName="lastName" class="form-input"
                                     [class.border-red-500]="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched"
+                                    [attr.aria-describedby]="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched ? 'sched-lastName-error' : null"
+                                    aria-required="true"
                                     placeholder="Ex: Silva" />
                                 <p *ngIf="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched"
-                                    class="text-[10px] text-red-500 mt-1">
+                                    id="sched-lastName-error"
+                                    class="text-[10px] text-red-500 mt-1" role="alert">
                                     Nome inválido (use apenas letras).
                                 </p>
                             </div>
@@ -84,30 +91,36 @@
                         <!-- Contact Fields -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="form-group">
-                                <label class="form-label"
+                                <label for="sched-email" class="form-label"
                                     [class.text-red-500]="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched">
-                                    <lucide-icon [name]="MailIcon" class="w-4 h-4" /> Email *
+                                    <lucide-icon [name]="MailIcon" class="w-4 h-4" aria-hidden="true" /> Email *
                                 </label>
-                                <input type="email" formControlName="email" class="form-input"
+                                <input type="email" id="sched-email" formControlName="email" class="form-input"
                                     [class.border-red-500]="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched"
+                                    [attr.aria-describedby]="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched ? 'sched-email-error' : null"
+                                    aria-required="true"
                                     placeholder="maria@exemplo.com" />
                                 <p *ngIf="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched"
-                                    class="text-[10px] text-red-500 mt-1">
+                                    id="sched-email-error"
+                                    class="text-[10px] text-red-500 mt-1" role="alert">
                                     Email inválido.
                                 </p>
                             </div>
                             <div class="form-group">
-                                <label class="form-label"
+                                <label for="sched-phone" class="form-label"
                                     [class.text-red-500]="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched">
-                                    <lucide-icon [name]="PhoneIcon" class="w-4 h-4" /> Telefone *
+                                    <lucide-icon [name]="PhoneIcon" class="w-4 h-4" aria-hidden="true" /> Telefone *
                                 </label>
-                                <input type="tel" formControlName="phone" class="form-input"
+                                <input type="tel" id="sched-phone" formControlName="phone" class="form-input"
                                     (input)="filterPhone($event)"
                                     [class.border-red-500]="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched"
+                                    [attr.aria-describedby]="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched ? 'sched-phone-error' : null"
+                                    aria-required="true"
                                     placeholder="9xxxxxxxx" />
                                 <p *ngIf="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched"
-                                    class="text-[10px] text-red-500 mt-1">
-                                    Telefone inválido (apenas números).
+                                    id="sched-phone-error"
+                                    class="text-[10px] text-red-500 mt-1" role="alert">
+                                    Introduza um número de telefone português com 9 dígitos (ex: 910000000).
                                 </p>
                             </div>
                         </div>
@@ -115,23 +128,24 @@
                         <div class="form-group sm:col-span-2">
                             <label class="form-label"
                                 [class.text-red-500]="schedulingForm.get('date')?.invalid && schedulingForm.get('date')?.touched">
-                                <lucide-icon [name]="CalendarIcon" class="w-4 h-4" /> Data Desejada *
+                                <lucide-icon [name]="CalendarIcon" class="w-4 h-4" aria-hidden="true" /> Data Desejada *
                             </label>
                             <app-calendar [selectedDate]="schedulingForm.get('date')?.value ?? null"
                                 (dateChange)="onDateChange($event)" />
                             <input type="hidden" formControlName="date" />
                             <p *ngIf="schedulingForm.get('date')?.invalid && schedulingForm.get('date')?.touched"
-                                class="text-[10px] text-red-500 mt-1">
+                                class="text-[10px] text-red-500 mt-1" role="alert">
                                 Por favor selecione uma data válida (2ª a 6ª feira).
                             </p>
                         </div>
-                        <div class="form-group sm:col-span-2">
 
-                            <label class="form-label"
+                        <div class="form-group sm:col-span-2">
+                            <label for="sched-time" class="form-label"
                                 [class.text-red-500]="schedulingForm.get('time')?.invalid && schedulingForm.get('time')?.touched">
-                                <lucide-icon [name]="ClockIcon" class="w-4 h-4" /> Hora Preferencial *
+                                <lucide-icon [name]="ClockIcon" class="w-4 h-4" aria-hidden="true" /> Hora Preferencial *
                             </label>
-                            <select formControlName="time" class="form-select"
+                            <select id="sched-time" formControlName="time" class="form-select"
+                                aria-required="true"
                                 [class.border-red-500]="schedulingForm.get('time')?.invalid && schedulingForm.get('time')?.touched">
                                 <option value="">Selecione...</option>
                                 <option value="09:00">09:00</option>
@@ -155,24 +169,24 @@
 
                         <!-- Reason Field -->
                         <div class="form-group">
-
-
-                            <label class="form-label"
+                            <label for="sched-reason" class="form-label"
                                 [class.text-red-500]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched">
-                                <lucide-icon [name]="MessageIcon" class="w-4 h-4" /> Motivo da Consulta *
+                                <lucide-icon [name]="MessageIcon" class="w-4 h-4" aria-hidden="true" /> Motivo da Consulta *
                             </label>
-                            <textarea formControlName="reason" rows="4" class="form-textarea"
+                            <textarea id="sched-reason" formControlName="reason" rows="4" class="form-textarea"
+                                aria-required="true"
                                 [class.border-red-500]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched"
                                 placeholder="Descreva brevemente o assunto..."></textarea>
                         </div>
 
                         <!-- GDPR Consent -->
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" formControlName="gdpr" id="gdpr" class="gdpr-checkbox" />
+                            <input type="checkbox" formControlName="gdpr" id="gdpr" class="gdpr-checkbox" aria-required="true" />
                             <label for="gdpr" class="gdpr-label"
                                 [class.text-red-500]="schedulingForm.get('gdpr')?.invalid && schedulingForm.get('gdpr')?.touched">
-                                GDPR - Eu concordo que este site armazene as informações enviadas por mim de forma a que
-                                se proceda à resposta da informação solicitada. *
+                                Concordo que os meus dados pessoais sejam tratados pela Dra. Conceição Lopes
+                                exclusivamente para efeitos de agendamento de consulta jurídica, em conformidade com a
+                                <a routerLink="/politica-privacidade" class="text-secondary underline hover:opacity-80">Política de Privacidade</a>. *
                             </label>
                         </div>
 
@@ -182,9 +196,16 @@
                             <div class="loading-spinner"></div>
                             A enviar...
                             } @else {
-                            <lucide-icon [name]="SendIcon" class="w-5 h-5" /> Submeter Pedido
+                            <lucide-icon [name]="SendIcon" class="w-5 h-5" aria-hidden="true" /> Submeter Pedido
                             }
                         </button>
+
+                        <!-- Inline Error Message -->
+                        @if (submitError()) {
+                        <div class="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700" role="alert" aria-live="assertive">
+                            {{ submitError() }}
+                        </div>
+                        }
                     </form>
                 </app-blur-fade>
                 } @else {
@@ -192,15 +213,12 @@
                 <app-blur-fade>
                     <div id="success-card" class="success-container">
                         <div class="success-icon-wrapper">
-                            <lucide-icon [name]="CheckCircleIcon" class="w-10 h-10 text-secondary" />
+                            <lucide-icon [name]="CheckCircleIcon" class="w-10 h-10 text-secondary" aria-hidden="true" />
                         </div>
                         <h3 class="success-title">Pedido Recebido!</h3>
-
-
                         <p class="success-text">
                             Obrigado pelo seu pedido, {{ schedulingForm.value.firstName }}. Entraremos em
-                            contacto
-                            consigo em breve para confirmar a data e hora.
+                            contacto consigo em breve para confirmar a data e hora.
                         </p>
                         <button (click)="resetForm()" class="btn-reset">
                             Fazer novo agendamento

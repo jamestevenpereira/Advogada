@@ -1,11 +1,8 @@
 import { Component, inject, DOCUMENT, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
-import { WordRotateComponent } from '../../components/magic-ui/word-rotate/word-rotate.component';
-import { MarqueeComponent } from '../../components/magic-ui/marquee/marquee.component';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
 import { LucideAngularModule, ChevronRight, ShieldCheck, Scale, Users, Phone } from 'lucide-angular';
-import { ShinyButtonComponent } from '../../components/magic-ui/shiny-button/shiny-button.component';
 import { SeoService } from '../../services/seo.service';
 import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
 
@@ -15,11 +12,8 @@ import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
   imports: [
     CommonModule,
     RouterLink,
-    WordRotateComponent,
-    MarqueeComponent,
     BlurFadeComponent,
     LucideAngularModule,
-    ShinyButtonComponent,
     FaqComponent
   ],
   templateUrl: './home.component.html',
@@ -93,6 +87,8 @@ export class HomeComponent implements OnDestroy {
   schedulingRedirect() {
     this.router.navigate(['/agendamento']);
   }
+
+  stars = [1, 2, 3, 4, 5];
 
   testimonials = [
     {

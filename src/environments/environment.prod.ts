@@ -8,5 +8,11 @@ export const environment = {
         messagingSenderId: "772813782412",
         appId: "1:772813782412:web:a3b1ef7f5f88f59cb4eaa9",
         measurementId: "G-99QVJXWM66"
+    },
+    emailjs: {
+        serviceId: 'service_cwkcr1a',
+        templateId: 'template_uufnfct',
+        publicKey: 'JrbxqlACBzqz-hDMH',
+        recipientEmail: 'conceicao-66631c@adv.oa.pt'
     }
 };

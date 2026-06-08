@@ -1,0 +1,109 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Tondela</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="MapPinIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Advogada em Tondela</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada em Tondela — Dra. Conceição Lopes
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          A Dra. Conceição Lopes serve os residentes de Tondela e arredores com consultoria jurídica especializada em Direito da Família, Trabalho, Civil, Comercial, Penal e Administrativo. Escritório em Nelas, com consulta presencial e por videochamada disponível.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- Serviços disponíveis em Tondela -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Serviços disponíveis em Tondela</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a *ngFor="let area of practiceAreas" [routerLink]="'/areas/' + area.slug"
+            class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+              <lucide-icon [name]="area.icon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-base font-bold text-primary mb-2">{{ area.title }}</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">{{ area.description }}</p>
+          </a>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Porque escolher -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Porque escolher a Dra. Conceição Lopes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="AwardIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Experiência no Distrito de Viseu</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Com 7 anos a atuar no Distrito de Viseu, a Dra. Conceição Lopes conhece os tribunais, os procedimentos e as entidades locais. Os clientes de Tondela beneficiam de uma advogada que domina o sistema judicial da sua região.</p>
+          </div>
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="MapPinIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Escritório Próximo</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">O escritório em Nelas está a poucos minutos de Tondela, tornando as deslocações para consulta rápidas e convenientes. Em alternativa, a consulta por videochamada está sempre disponível para quem prefira não se deslocar.</p>
+          </div>
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="ClockIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Serviço Personalizado</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Cada cliente de Tondela é tratado individualmente, com atenção total às suas necessidades específicas. A Dra. Conceição Lopes explica cada etapa do processo em linguagem acessível, sem jargão jurídico desnecessário.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Comarca de Viseu -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16 p-8 md:p-10 rounded-3xl bg-primary/5 border border-primary/10">
+        <h2 class="text-2xl font-serif font-bold text-primary mb-4">Comarca de Viseu — Tondela e Região</h2>
+        <div class="h-1 w-16 bg-secondary mb-6"></div>
+        <p class="text-zinc-600 mb-4">
+          O concelho de Tondela integra a Comarca de Viseu. Os processos judiciais dos residentes de Tondela — família, trabalho, civil, penal e administrativo — correm no Tribunal Judicial da Comarca de Viseu, o mesmo onde a Dra. Conceição Lopes exerce regularmente.
+        </p>
+        <p class="text-zinc-600">
+          A familiaridade com o funcionamento dos tribunais da Comarca de Viseu é uma vantagem concreta para os clientes de Tondela: processos mais ágeis, menos burocracia e uma representação mais informada e eficaz.
+        </p>
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Precisa de uma advogada em Tondela?</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Agende uma consulta com a Dra. Conceição Lopes. Atendimento presencial em Nelas ou por videochamada, sempre com a máxima discrição e profissionalismo.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

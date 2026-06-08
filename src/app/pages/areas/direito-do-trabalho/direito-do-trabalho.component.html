@@ -1,0 +1,137 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <a routerLink="/areas" class="hover:text-secondary transition-colors">Áreas de Atuação</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Direito do Trabalho</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="BriefcaseIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Direito do Trabalho</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada Laboral em Nelas e Viseu
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          Perdeu o emprego de forma injusta? Sofreu assédio no trabalho? Teve um acidente? A Dra. Conceição Lopes defende os seus direitos laborais com determinação, no Tribunal do Trabalho de Viseu e em negociação direta com empregadores.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- O que fazemos -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">O que fazemos</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Despedimento Ilícito -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="BriefcaseIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Despedimento Ilícito</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Se foi despedido sem justa causa comprovada, sem o correto procedimento disciplinar, ou em represália por exercer direitos legais, o despedimento pode ser impugnado em tribunal. Tem 60 dias para agir. A Dra. Conceição Lopes analisa o seu caso e, se houver fundamento, representa-o no tribunal laboral para obter a reintegração ou uma indemnização compensatória justa.
+            </p>
+          </div>
+
+          <!-- Assédio Laboral -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="AlertTriangleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Assédio Laboral e Moral</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              O assédio moral e sexual no trabalho é proibido por lei e constitui crime. Situações de isolamento, perseguição, críticas infundadas sistemáticas, mudanças abusivas de funções ou humilhação pública dão direito a indemnização e resolução com justa causa. Orientamo-lo sobre como documentar o assédio, como apresentar queixa à ACT e como instaurar processo judicial para obter ressarcimento.
+            </p>
+          </div>
+
+          <!-- Acidentes de Trabalho -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="HeartPulseIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Acidentes de Trabalho</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Após um acidente de trabalho, tem direito a assistência médica, reabilitação e indemnização por incapacidade temporária ou permanente. As seguradoras frequentemente subestimam as indemnizações — a nossa intervenção garante que a incapacidade é corretamente avaliada e que recebe tudo a que tem direito por lei. Representamo-lo no processo de reparação, incluindo nas juntas médicas.
+            </p>
+          </div>
+
+          <!-- Negociação de Indemnizações -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ScaleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Negociação de Indemnizações e Rescisões</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Antes de assinar qualquer acordo de cessação de contrato, consulte-nos. Muitos trabalhadores aceitam indemnizações abaixo do valor legal sem o saber. Calculamos o valor correto da indemnização (subsídio de férias, dias de trabalho, compensação legal), negociamos com o empregador e garantimos que o acordo é justo e equilibrado. Tratamos também de rescisões com justa causa por iniciativa do trabalhador.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Como funciona o processo -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16 bg-zinc-50 rounded-3xl p-8 md:p-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Como funciona o processo</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+            <h3 class="text-lg font-bold text-primary">Consulta Urgente</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Em matéria laboral os prazos são curtos — 60 dias para impugnar um despedimento. Contacte-nos imediatamente para preservar os seus direitos e obter uma análise do seu caso.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+            <h3 class="text-lg font-bold text-primary">Estratégia e Negociação</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Tentamos primeiro a resolução extrajudicial — muitas situações resolvem-se com uma carta formal ou uma negociação direta. Só avançamos para tribunal quando necessário e quando há fundamento sólido.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+            <h3 class="text-lg font-bold text-primary">Acompanhamento Total</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Representamo-lo no Tribunal do Trabalho de Viseu em todas as audiências, mantendo-o informado de cada desenvolvimento e trabalhando para obter o melhor resultado possível.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- FAQ -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Perguntas Frequentes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <app-faq [faqs]="faqs" />
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Defenda os seus direitos laborais</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Não aceite uma situação injusta no trabalho. Consulte a Dra. Conceição Lopes e saiba exatamente o que pode fazer — os prazos são curtos, por isso não espere.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

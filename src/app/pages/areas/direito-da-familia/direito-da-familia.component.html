@@ -1,0 +1,137 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <a routerLink="/areas" class="hover:text-secondary transition-colors">Áreas de Atuação</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Direito da Família</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="HeartIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Direito da Família</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada de Direito da Família em Nelas e Viseu
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          Nos momentos mais difíceis da vida familiar, tem a garantia de um acompanhamento humano, discreto e tecnicamente rigoroso. A Dra. Conceição Lopes protege os seus direitos e os dos seus filhos no Distrito de Viseu.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta Gratuita
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- O que fazemos -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">O que fazemos</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Divórcio -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="HeartIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Divórcio e Separação</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Tratamos de divórcios por mútuo acordo e litigiosos, orientando-o desde a negociação dos acordos até à sentença final. Um processo de divórcio bem conduzido minimiza o conflito, reduz o tempo e protege o bem-estar dos seus filhos. Garantimos transparência total sobre custos e prazos desde a primeira consulta.
+            </p>
+          </div>
+
+          <!-- Poder Parental -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="UsersIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Regulação do Poder Parental</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Definimos com clareza a guarda, o regime de visitas e a participação de cada progenitor nas decisões importantes da vida dos filhos. O superior interesse da criança é sempre a nossa prioridade, e lutamos para garantir que os seus direitos como pai ou mãe sejam plenamente respeitados. Representamo-lo também em revisões de acordos já existentes.
+            </p>
+          </div>
+
+          <!-- Pensão de Alimentos -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ScaleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Pensão de Alimentos</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Fixação, atualização e execução de pensões de alimentos para filhos menores e maiores em formação. Em caso de incumprimento, acionamos os mecanismos legais — incluindo desconto no vencimento e fundo de garantia — para garantir que as crianças recebem o que lhes é devido. Acompanhamos também pedidos de redução ou aumento de pensão quando as circunstâncias mudam.
+            </p>
+          </div>
+
+          <!-- Partilha de Bens -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="HomeIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Partilha de Bens e Inventários</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Orientamos a partilha de bens comuns após divórcio — imóveis, veículos, contas bancárias e investimentos — tanto por via extrajudicial (escritura notarial) como em processo de inventário judicial. Analisamos o regime de bens do seu casamento e identificamos a estratégia mais favorável para proteger o seu património. Tratamos também de inventários por falecimento para regularizar heranças.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Como funciona o processo -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16 bg-zinc-50 rounded-3xl p-8 md:p-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Como funciona o processo</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+            <h3 class="text-lg font-bold text-primary">Consulta Inicial</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Analisamos a sua situação em detalhe, explicamos os seus direitos em linguagem clara e apresentamos as opções disponíveis. Sem compromissos, sem surpresas.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+            <h3 class="text-lg font-bold text-primary">Estratégia Jurídica</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Definimos em conjunto a melhor abordagem — negociação, mediação ou via judicial — tendo em conta os seus objetivos e a proteção dos seus filhos.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+            <h3 class="text-lg font-bold text-primary">Acompanhamento Total</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Representamo-lo em todas as diligências, mantemos-no informado em cada etapa e defendemos os seus interesses até à resolução definitiva do processo.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- FAQ -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Perguntas Frequentes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <app-faq [faqs]="faqs" />
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Precisa de ajuda em Direito da Família?</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Agende uma consulta confidencial com a Dra. Conceição Lopes. Respondemos a todas as suas dúvidas com clareza e sem compromisso.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

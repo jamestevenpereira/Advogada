@@ -1,0 +1,148 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <a routerLink="/areas" class="hover:text-secondary transition-colors">Áreas de Atuação</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Direito Penal</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="ShieldIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Direito Penal</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Defesa Criminal em Nelas e Viseu
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          Num processo criminal, os seus direitos constitucionais estão em jogo. A Dra. Conceição Lopes presta uma defesa discreta, determinada e rigorosa — seja como arguido, seja como vítima que pretende constituir-se assistente no processo.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Contactar Urgente
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- Aviso importante -->
+    <app-blur-fade [delay]="250">
+      <div class="mb-12 p-6 rounded-2xl bg-amber-50 border border-amber-200 flex gap-4">
+        <lucide-icon [name]="AlertCircleIcon" class="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+        <div>
+          <h3 class="font-bold text-amber-800 mb-1">Situação urgente?</h3>
+          <p class="text-amber-700 text-sm">Se foi constituído arguido ou detido, exercer o direito ao silêncio e contactar imediatamente um advogado são os seus direitos fundamentais. Nunca preste declarações sem assistência jurídica. Contacte-nos pelo <strong>+351 910 322 893</strong>.</p>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- O que fazemos -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">O que fazemos</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Defesa Criminal -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ShieldIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Defesa em Processos-Crime</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Representamos arguidos em todas as fases do processo penal — desde o primeiro interrogatório na fase de inquérito até ao julgamento e recursos. A nossa estratégia de defesa começa com uma análise rigorosa dos factos imputados, da prova existente e das garantias processuais. Asseguramos que os seus direitos são respeitados em cada momento e que recebe a melhor defesa possível perante o tribunal.
+            </p>
+          </div>
+
+          <!-- Assistente -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="FileTextIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Constituição como Assistente</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Se foi vítima de um crime — burla, difamação, injúria, violência doméstica, ofensas corporais — pode constituir-se assistente no processo penal para participar ativamente na acusação. Como assistente, pode deduzir acusação particular, requerer diligências de prova e recorrer de decisões que considerem não haver matéria para julgamento. A Dra. Conceição Lopes garante que a sua voz é ouvida e que o infrator responde pelos seus atos.
+            </p>
+          </div>
+
+          <!-- Recursos -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ScaleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Recursos Penais</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Uma sentença penal desfavorável não é necessariamente definitiva. Analisamos decisões de arquivamento, despachos de pronúncia e sentenças de julgamento para identificar fundamentos de recurso — vícios processuais, erros na apreciação da prova ou erros de direito. Interpomos recursos para o Tribunal da Relação de Coimbra e, quando aplicável, para o Supremo Tribunal de Justiça.
+            </p>
+          </div>
+
+          <!-- Habeas Corpus e Medidas de Coação -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="AlertCircleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Medidas de Coação e Habeas Corpus</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              As medidas de coação — incluindo prisão preventiva, obrigação de apresentação periódica ou proibição de contactos — podem ser contestadas e revistas. Requeremos a substituição ou levantamento de medidas de coação desproporcionais e, em casos de detenção ilegal, recorremos ao habeas corpus. A liberdade é um direito fundamental que defendemos com toda a determinação.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Como funciona o processo -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16 bg-zinc-50 rounded-3xl p-8 md:p-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Fases do Processo Penal</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+            <h3 class="text-lg font-bold text-primary">Inquérito</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Fase de investigação dirigida pelo Ministério Público. É o momento crucial para assegurar que as suas declarações são protegidas, que a prova é legalmente obtida e que os seus direitos processuais são respeitados.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+            <h3 class="text-lg font-bold text-primary">Instrução e Julgamento</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Preparamos a defesa com análise detalhada da acusação, identificação de falhas probatórias e estratégia para o julgamento. Representamo-lo em todas as audiências com rigor e conhecimento.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+            <h3 class="text-lg font-bold text-primary">Recursos</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Se o resultado do julgamento for desfavorável, analisamos os fundamentos de recurso e, se houver base jurídica sólida, interpomos recurso para o Tribunal da Relação de Coimbra.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- FAQ -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Perguntas Frequentes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <app-faq [faqs]="faqs" />
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Enfrenta um processo criminal?</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Não enfrente um processo penal sem apoio jurídico especializado. A Dra. Conceição Lopes presta uma defesa discreta e eficaz no Tribunal de Viseu e em toda a Comarca.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta Confidencial
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

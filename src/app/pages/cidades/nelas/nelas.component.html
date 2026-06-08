@@ -1,0 +1,126 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Nelas</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="MapPinIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Advogada em Nelas</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada em Nelas — Escritório Local
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          A Dra. Conceição Lopes tem o seu escritório em Nelas, na <strong class="text-zinc-700">Av. João XXIII 2 R/C</strong>. É a única advogada com escritório físico na cidade de Nelas, oferecendo consulta jurídica presencial, telefónica e por videochamada para maior comodidade dos seus clientes.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta em Nelas
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- Destaque: Única em Nelas -->
+    <app-blur-fade [delay]="250">
+      <div class="mb-12 p-8 rounded-3xl bg-primary/5 border border-primary/15">
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center flex-shrink-0">
+            <lucide-icon [name]="AwardIcon" class="w-7 h-7 text-white" aria-hidden="true" />
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-primary mb-2">A única advogada com escritório em Nelas</h2>
+            <p class="text-zinc-600 leading-relaxed">
+              Nelas é uma cidade onde os residentes merecem acesso a serviços jurídicos de qualidade sem ter de se deslocar a Viseu ou outras cidades maiores. A Dra. Conceição Lopes estabeleceu o seu escritório em Nelas precisamente para servir a comunidade local com a mesma qualidade e rigor que encontraria num grande centro urbano. Conheça a advogada da sua terra.
+            </p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Serviços disponíveis em Nelas -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Serviços disponíveis em Nelas</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a *ngFor="let area of practiceAreas" [routerLink]="'/areas/' + area.slug"
+            class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+              <lucide-icon [name]="area.icon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-base font-bold text-primary mb-2">{{ area.title }}</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">{{ area.description }}</p>
+          </a>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Porque escolher -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Vantagens do escritório em Nelas</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="MapPinIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Sem deslocações a Viseu</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Para os residentes de Nelas e concelhos vizinhos, ter uma advogada com escritório local significa poupar tempo e custos de deslocação. As consultas realizam-se em ambiente privado e acolhedor, perto de sua casa.</p>
+          </div>
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="AwardIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Experiência Local</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">7 anos a servir a comunidade de Nelas e do Dão-Lafões. A Dra. Conceição Lopes conhece as dinâmicas locais, os serviços municipais e as especificidades da Comarca de Viseu que fazem a diferença num processo judicial.</p>
+          </div>
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="ClockIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Consulta Online Disponível</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Quando não é possível deslocar-se presencialmente, a Dra. Conceição Lopes está disponível por videochamada para uma consulta completa e confidencial. A tecnologia ao serviço da justiça local.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Comarca de Viseu -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16 p-8 md:p-10 rounded-3xl bg-primary/5 border border-primary/10">
+        <h2 class="text-2xl font-serif font-bold text-primary mb-4">Comarca de Viseu — Nelas e Região</h2>
+        <div class="h-1 w-16 bg-secondary mb-6"></div>
+        <p class="text-zinc-600 mb-4">
+          O concelho de Nelas faz parte da Comarca de Viseu, o que significa que os processos judiciais de residentes de Nelas correm no Tribunal Judicial da Comarca de Viseu. A proximidade do escritório com o tribunal de Viseu garante uma representação ágil e eficiente.
+        </p>
+        <p class="text-zinc-600">
+          Para além dos seus clientes de Nelas, a Dra. Conceição Lopes serve também os concelhos vizinhos de Carregal do Sal, Mangualde, Penalva do Castelo e Santa Comba Dão, todos integrados na mesma comarca.
+        </p>
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">A advogada de Nelas ao seu serviço</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Agende uma consulta presencial no escritório em Nelas (Av. João XXIII 2 R/C) ou por videochamada, conforme a sua conveniência.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Viseu</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="MapPinIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Advogada em Viseu</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada em Viseu — Dra. Conceição Lopes
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          Com escritório em Nelas — a apenas 20 minutos de Viseu — a Dra. Conceição Lopes serve clientes em toda a cidade de Viseu e Comarca. Atendimento presencial, telefónico e por videochamada para a sua comodidade.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- Serviços disponíveis em Viseu -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Serviços disponíveis em Viseu</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a *ngFor="let area of practiceAreas" [routerLink]="'/areas/' + area.slug"
+            class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+              <lucide-icon [name]="area.icon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-base font-bold text-primary mb-2">{{ area.title }}</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">{{ area.description }}</p>
+          </a>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Porque escolher -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Porque escolher a Dra. Conceição Lopes em Viseu</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="AwardIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">7 Anos de Experiência</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Com 7 anos de prática jurídica no Distrito de Viseu, a Dra. Conceição Lopes conhece profundamente o sistema judicial local — os tribunais, os juízes e os procedimentos específicos da Comarca de Viseu. Essa experiência local traduz-se em processos mais eficientes para os seus clientes.</p>
+          </div>
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="MapPinIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Conhecimento Local</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Conhecer o território onde se pratica direito faz diferença. A proximidade com o Tribunal Judicial da Comarca de Viseu, com os serviços da Segurança Social e com as câmaras municipais do Distrito permite uma representação mais ágil e eficaz do que advogados de fora da região.</p>
+          </div>
+          <div class="bg-zinc-50 rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
+              <lucide-icon [name]="ClockIcon" class="w-6 h-6 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Atendimento Personalizado</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Ao contrário de grandes escritórios de Lisboa ou Porto, cada cliente é tratado pessoalmente pela Dra. Conceição Lopes — sem ser passado de colaborador em colaborador. Comunicação direta, respostas rápidas e total transparência sobre honorários e progressos do processo.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Comarca de Viseu -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16 p-8 md:p-10 rounded-3xl bg-primary/5 border border-primary/10">
+        <h2 class="text-2xl font-serif font-bold text-primary mb-4">Comarca de Viseu — Cobertura Jurisdicional</h2>
+        <div class="h-1 w-16 bg-secondary mb-6"></div>
+        <p class="text-zinc-600 mb-4">
+          O Tribunal Judicial da Comarca de Viseu abrange todos os concelhos do Distrito de Viseu — incluindo Viseu, Nelas, Tondela, Santa Comba Dão, Carregal do Sal, Mangualde, Sátão, Aguiar da Beira, Castro Daire, Cinfães, Lamego, Moimenta da Beira, Mortágua, Penalva do Castelo, Penedono, Resende, São João da Pesqueira, Tabuaço, Tarouca e Vila Nova de Paiva.
+        </p>
+        <p class="text-zinc-600">
+          Independentemente do concelho onde reside, a Dra. Conceição Lopes pode representá-lo em processos que corram no Tribunal de Viseu, nos Julgados de Paz, no Tribunal Administrativo e Fiscal de Viseu e no Tribunal do Trabalho de Viseu.
+        </p>
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Precisa de uma advogada em Viseu?</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Agende uma consulta com a Dra. Conceição Lopes. Atendimento presencial em Nelas ou por videochamada, conforme a sua preferência.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

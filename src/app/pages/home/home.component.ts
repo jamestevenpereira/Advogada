@@ -62,7 +62,7 @@ export class HomeComponent implements OnDestroy {
     inject(SeoService).update({
       title: 'Advogada em Nelas e Viseu',
       description: 'Dra. Conceição Lopes, advogada com 7 anos de experiência no Distrito de Viseu. Direito da Família, Civil, Trabalho e Comercial. Agende a sua consulta.',
-      canonical: 'https://www.conceicaolopesadvogada.pt/',
+      canonical: 'https://www.conceicaolopes-advogada.pt/',
     });
 
     if (!this.doc.querySelector('script[data-faq-schema]')) {

@@ -22,7 +22,7 @@ export class PracticeAreasComponent {
     inject(SeoService).update({
       title: 'Serviços Jurídicos em Viseu',
       description: 'Serviços jurídicos em Nelas e Viseu: Direito da Família, Civil, Penal, Trabalho, Comercial e Administrativo. Consulta personalizada com a Dra. Conceição Lopes.',
-      canonical: 'https://www.conceicaolopesadvogada.pt/areas',
+      canonical: 'https://www.conceicaolopes-advogada.pt/areas',
     });
   }
 

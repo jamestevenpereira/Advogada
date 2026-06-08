@@ -11,7 +11,7 @@ export interface SeoConfig {
 }
 
 const SITE_NAME = 'Conceição Lopes — Advogada';
-const DEFAULT_OG_IMAGE = 'https://www.conceicaolopesadvogada.pt/assets/og-image.jpg';
+const DEFAULT_OG_IMAGE = 'https://www.conceicaolopes-advogada.pt/assets/og-image.jpg';
 
 @Injectable({ providedIn: 'root' })
 export class SeoService {

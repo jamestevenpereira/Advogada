@@ -44,7 +44,7 @@ describe('HomeComponent', () => {
         expect(seoSpy.update).toHaveBeenCalledWith(jasmine.objectContaining({
             title: jasmine.stringContaining('Viseu'),
             description: jasmine.stringContaining('Viseu'),
-            canonical: 'https://www.conceicaolopesadvogada.pt/'
+            canonical: 'https://www.conceicaolopes-advogada.pt/'
         }));
     });
 

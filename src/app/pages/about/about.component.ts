@@ -20,7 +20,7 @@ export class AboutComponent {
     inject(SeoService).update({
       title: 'Sobre a Advogada — Nelas, Viseu',
       description: 'Dra. Conceição Lopes (Cédula 66631C), advogada em Nelas com 7 anos de experiência no Distrito de Viseu. Especialista em Direito da Família, Civil e Comercial.',
-      canonical: 'https://www.conceicaolopesadvogada.pt/sobre',
+      canonical: 'https://www.conceicaolopes-advogada.pt/sobre',
     });
   }
 }

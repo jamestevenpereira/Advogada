@@ -18,7 +18,7 @@ export class CookiePolicyComponent {
     inject(SeoService).update({
       title: 'Política de Cookies',
       description: 'Informação sobre o uso de cookies no nosso website para melhorar a sua experiência de navegação.',
-      canonical: 'https://www.conceicaolopesadvogada.pt/politica-cookies',
+      canonical: 'https://www.conceicaolopes-advogada.pt/politica-cookies',
     });
   }
 }

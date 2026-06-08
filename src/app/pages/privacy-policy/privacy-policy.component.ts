@@ -17,7 +17,7 @@ export class PrivacyPolicyComponent {
     inject(SeoService).update({
       title: 'Política de Privacidade',
       description: 'Consulte a nossa política de privacidade e saiba como tratamos os seus dados pessoais com total segurança e confidencialidade.',
-      canonical: 'https://www.conceicaolopesadvogada.pt/politica-privacidade',
+      canonical: 'https://www.conceicaolopes-advogada.pt/politica-privacidade',
     });
   }
 }

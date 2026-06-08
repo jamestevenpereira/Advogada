@@ -17,13 +17,22 @@
         <!-- Practice Areas Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <app-blur-fade *ngFor="let area of practiceAreas; let i = index" [delay]="150 + i * 80">
-                <div class="group bg-white border border-zinc-200 rounded-3xl p-8 hover:border-secondary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                    <div class="w-14 h-14 rounded-2xl bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-secondary/10 transition-colors duration-300">
+                <a [routerLink]="area.link"
+                    class="group bg-white border border-zinc-200 rounded-3xl p-8 hover:border-secondary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col cursor-pointer">
+
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/15 transition-colors duration-300">
                         <lucide-icon [name]="area.icon" class="w-7 h-7 text-secondary" aria-hidden="true" />
                     </div>
-                    <h2 class="text-lg font-bold text-primary mb-3">{{ area.title }}</h2>
+
+                    <h2 class="text-lg font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-200">{{ area.title }}</h2>
                     <p class="text-zinc-500 text-sm leading-relaxed flex-1">{{ area.description }}</p>
-                </div>
+
+                    <div class="flex items-center gap-1.5 mt-6 text-sm font-semibold text-secondary/70 group-hover:text-secondary transition-all duration-200">
+                        <span>Saber mais</span>
+                        <lucide-icon [name]="ArrowRight"
+                            class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+                    </div>
+                </a>
             </app-blur-fade>
         </div>
 

@@ -7,8 +7,9 @@
                 <h2 class="section-badge">Agendamento</h2>
                 <h1 class="main-title">Marque a sua Consulta</h1>
                 <p class="section-description">
-                    Preencha o formulário abaixo e entraremos em contacto para confirmar o seu agendamento o mais breve
-                    possível.
+                    Preencha o formulário. Respondemos em 24 horas para confirmar a data e hora.
+                    Sem compromissos antes da nossa primeira conversa. Consultas presenciais em Nelas ou por videochamada.
+                    Prestamos também apoio judiciário. Se não sabe se tem direito, podemos ajudá-lo a verificar.
                 </p>
             </div>
         </app-blur-fade>
@@ -171,8 +172,7 @@
                             <input type="checkbox" formControlName="gdpr" id="gdpr" class="gdpr-checkbox" />
                             <label for="gdpr" class="gdpr-label"
                                 [class.text-red-500]="schedulingForm.get('gdpr')?.invalid && schedulingForm.get('gdpr')?.touched">
-                                GDPR - Eu concordo que este site armazene as informações enviadas por mim de forma a que
-                                se proceda à resposta da informação solicitada. *
+                                Concordo com o tratamento dos meus dados pessoais para resposta ao meu pedido de agendamento, de acordo com a <a href="/politica-privacidade" class="text-secondary underline hover:text-secondary/80">Política de Privacidade</a>. *
                             </label>
                         </div>
 
@@ -182,7 +182,7 @@
                             <div class="loading-spinner"></div>
                             A enviar...
                             } @else {
-                            <lucide-icon [name]="SendIcon" class="w-5 h-5" /> Submeter Pedido
+                            <lucide-icon [name]="SendIcon" class="w-5 h-5" /> Enviar Pedido de Consulta
                             }
                         </button>
                     </form>
@@ -196,11 +196,10 @@
                         </div>
                         <h3 class="success-title">Pedido Recebido!</h3>
 
-
                         <p class="success-text">
-                            Obrigado pelo seu pedido, {{ schedulingForm.value.firstName }}. Entraremos em
-                            contacto
-                            consigo em breve para confirmar a data e hora.
+                            Obrigado, {{ schedulingForm.value.firstName }}. Entraremos em contacto nas
+                            próximas 24 horas para confirmar a sua consulta. Se preferir contactar-nos
+                            diretamente: <a href="tel:+351910322893" class="text-secondary font-medium hover:underline">+351 910 322 893</a>.
                         </p>
                         <button (click)="resetForm()" class="btn-reset">
                             Fazer novo agendamento

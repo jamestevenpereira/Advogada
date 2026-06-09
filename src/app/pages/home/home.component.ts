@@ -37,27 +37,27 @@ export class HomeComponent implements OnDestroy {
   faqs: FaqItem[] = [
     {
       q: 'Quanto custa uma consulta jurídica?',
-      a: 'Os honorários são definidos caso a caso e comunicados com total transparência antes de qualquer compromisso. Prestamos também apoio judiciário para quem não possa suportar os custos.'
+      a: 'Os honorários são definidos caso a caso e apresentados com clareza antes de qualquer compromisso da sua parte, sem surpresas. Na primeira consulta ficará a saber exatamente o que o seu processo implica e qual o custo envolvido. Prestamos também apoio judiciário para quem não possa suportar os custos.'
     },
     {
       q: 'Trabalha no âmbito do Apoio Judiciário?',
-      a: 'Sim. Prestamos assessoria em processos de apoio judiciário, garantindo o acesso à justiça independentemente da situação económica do cliente.'
+      a: 'Sim. Prestamos assessoria em processos de apoio judiciário, garantindo o acesso à justiça independentemente da situação económica do cliente. Se não tiver a certeza se tem direito, podemos ajudá-lo a verificar.'
     },
     {
       q: 'Atende clientes fora de Nelas?',
-      a: 'Sim. O escritório serve clientes em todo o Distrito de Viseu, incluindo Viseu, Santa Comba Dão, Tondela e Carregal do Sal.'
+      a: 'Sim. O escritório serve clientes em todo o Distrito de Viseu, incluindo Viseu, Santa Comba Dão, Tondela e Carregal do Sal. Em casos pontuais, é também possível realizar consultas por videochamada.'
     },
     {
       q: 'Quanto tempo demora um processo de divórcio?',
-      a: 'Um divórcio por mútuo acordo pode ser resolvido em poucas semanas. Casos mais complexos dependem da agenda dos tribunais. Orientamo-lo em cada etapa do processo.'
+      a: 'Um divórcio por mútuo acordo pode ser resolvido em poucas semanas. Casos mais complexos dependem da agenda dos tribunais, mas a atuação célere de um advogado pode agilizar significativamente o processo. Quanto mais cedo agir, mais opções tem disponíveis. Orientamo-lo em cada etapa.'
     },
     {
       q: 'Como posso marcar uma consulta?',
-      a: 'Pode agendar online através do formulário de agendamento no nosso site, ou ligar para +351 910 322 893 de segunda a sexta, das 9h às 18h.'
+      a: 'Pode agendar online através do formulário de agendamento. Respondemos em 24 horas para confirmar a data e hora. Se preferir, ligue diretamente para +351 910 322 893, de segunda a sexta, das 9h às 18h.'
     },
     {
-      q: 'O escritório fica em Nelas — e se eu não me puder deslocar?',
-      a: 'Em situações pontuais, é possível realizar consultas por videochamada. Contacte-nos para avaliar a melhor solução para o seu caso.'
+      q: 'E se não me puder deslocar ao escritório em Nelas?',
+      a: 'É possível realizar consultas por videochamada. Contacte-nos para combinar o formato mais cómodo para si. O importante é ter o apoio jurídico de que precisa.'
     }
   ];
 
@@ -122,7 +122,7 @@ export class HomeComponent implements OnDestroy {
       text: "Dra. Conceição é uma profissional impecável. Senti-me segura e bem representada em todo o processo de partilhas.",
       initials: "AM",
       author: "Ana Martins",
-      caseType: "Direito de Família"
+      caseType: "Direito da Família"
     },
     {
       text: "Excelente atendimento e clareza nas explicações. Recomendo para qualquer assunto de direito comercial.",

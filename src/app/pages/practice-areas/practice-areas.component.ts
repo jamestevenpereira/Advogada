@@ -47,31 +47,31 @@ export class PracticeAreasComponent {
     },
     {
       title: 'Direito Civil',
-      description: 'Elaboração e revisão de contratos, responsabilidade civil, direitos reais e posse. Defendemos os seus interesses em litígios civis com rigor e eficácia.',
+      description: 'Elaboração e revisão de contratos, responsabilidade civil, direitos reais e posse. Quando os seus direitos são ignorados, agimos para os repor, com processos claros e sem surpresas.',
       icon: Scale,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito do Trabalho',
-      description: 'Despedimento ilícito, rescisão com justa causa, assédio laboral, acidentes de trabalho e negociação de indemnizações. Defenda os seus direitos enquanto trabalhador.',
+      description: 'Despedimento ilícito, rescisão com justa causa, assédio laboral, acidentes de trabalho e negociação de indemnizações. Quando o emprego termina de forma injusta, há sempre algo a fazer.',
       icon: Briefcase,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito Comercial',
-      description: 'Constituição e dissolução de sociedades, contratos comerciais, recuperação de créditos e processos de insolvência. Assessoria jurídica para empresas e empresários do Distrito de Viseu.',
+      description: 'Constituição e dissolução de sociedades, contratos comerciais, recuperação de créditos e processos de insolvência. Para empresários do Distrito de Viseu que precisam de um advogado que conhece a realidade local.',
       icon: Building,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito Penal',
-      description: 'Defesa em processos-crime, constituição como assistente, recursos e habeas corpus. Representação discreta e eficaz em todas as fases do processo penal.',
+      description: 'Defesa em processos-crime, constituição como assistente, recursos e habeas corpus. A defesa começa na fase de inquérito; não espere pela acusação para agir.',
       icon: Shield,
       class: 'md:col-span-1'
     },
     {
       title: 'Direito Administrativo',
-      description: 'Impugnação de atos administrativos, contencioso tributário, licenciamentos e relações com entidades públicas. Defendemos os seus direitos face à Administração Pública.',
+      description: 'Impugnação de atos administrativos, contencioso tributário, licenciamentos e relações com entidades públicas. Quando o Estado ou uma instituição ignora os seus direitos, temos as ferramentas para obrigar à resposta que merece.',
       icon: Gavel,
       class: 'md:col-span-1'
     }

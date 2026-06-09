@@ -23,14 +23,15 @@
                 </app-blur-fade>
 
                 <app-blur-fade [delay]="200">
+                    <p class="text-sm font-semibold text-secondary tracking-wide uppercase mb-2">Dra. Conceição Lopes</p>
                     <h1 class="hero-title text-zinc-900">
-                        Conceição Lopes
+                        Do seu lado em cada processo jurídico.
                     </h1>
                 </app-blur-fade>
 
                 <app-blur-fade [delay]="300">
                     <div class="hero-subtitle">
-                        <span>Defendendo os seus direitos em</span>
+                        <span>A sua defesa em</span>
                         <app-word-rotate [words]="['Família', 'Civil', 'Trabalho', 'Comercial', 'Penal']"
                             class="text-secondary font-bold" />
                     </div>
@@ -38,9 +39,9 @@
 
                 <app-blur-fade [delay]="500">
                     <p class="hero-description text-lg text-zinc-600 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
-                        Com 7 anos de experiência no Distrito de Viseu, a Dra. Conceição Lopes defende os seus
-                        direitos com dedicação, ética e clareza — para que nunca enfrente sozinho os desafios
-                        legais da sua vida.
+                        Com 7 anos a acompanhar famílias, trabalhadores e empresas no Distrito de Viseu, a Dra.
+                        Conceição Lopes explica os seus direitos em linguagem simples e defende os seus interesses
+                        com determinação, para que nunca enfrente sozinho os desafios legais da sua vida.
                     </p>
                 </app-blur-fade>
 
@@ -49,7 +50,7 @@
                         class="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto justify-center lg:justify-start">
                         <app-shiny-button (click)="schedulingRedirect()"
                             class="w-full sm:w-auto h-12 md:h-14 px-8 text-base md:text-lg">
-                            Agendar Consulta
+                            Marcar a Minha Consulta
                             <lucide-icon [name]="ChevronRight" class="w-5 h-5 ml-1" />
                         </app-shiny-button>
                         <a routerLink="/areas"
@@ -61,7 +62,7 @@
                         <a href="tel:+351910322893" class="text-secondary font-medium hover:underline">
                             📞 +351 910 322 893
                         </a>
-                        <span class="text-zinc-400"> — 2ª a 6ª, 9h–18h (chamada rede móvel nacional)</span>
+                        <span class="text-zinc-400">, 2ª a 6ª das 9h às 18h (chamada rede móvel nacional)</span>
                     </p>
                 </app-blur-fade>
             </div>
@@ -78,7 +79,7 @@
                         <!-- Main Image Container -->
                         <div
                             class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] transform hover:-translate-y-2 transition-transform duration-500">
-                            <img src="assets/foto-estatua.jpg" alt="Estátua da Justiça — símbolo da advocacia"
+                            <img src="assets/foto-estatua.jpg" alt="Estátua da Justiça, símbolo da advocacia"
                                 class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-1000"
                                 loading="eager" fetchpriority="high" />
 
@@ -149,7 +150,7 @@
                     <lucide-icon [name]="Scale" class="w-8 h-8 text-secondary" />
                 </div>
                 <h3 class="feature-title">Ética e Justiça</h3>
-                <p class="feature-description">Membro da Ordem dos Advogados (Cédula 66631C). Atuamos sempre com rigor deontológico e em defesa genuína dos seus interesses.</p>
+                <p class="feature-description">Inscrita na Ordem dos Advogados (Cédula 66631C). Atuamos sempre com honestidade e no seu interesse real: sem atalhos, sem compromissos que o prejudiquem.</p>
             </div>
 
             <!-- Humane Treatment -->
@@ -166,3 +167,14 @@
 
 <!-- FAQ Section -->
 <app-faq [faqs]="faqs" />
+
+<!-- Post-FAQ CTA Section -->
+<section class="py-16 bg-white border-t border-zinc-100">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+        <p class="text-zinc-500 mb-2 text-sm">Ainda tem dúvidas? A primeira conversa é sem compromisso.</p>
+        <a routerLink="/agendamento" class="btn-cta inline-flex items-center gap-2">
+            Marcar a Minha Consulta
+            <lucide-icon [name]="ChevronRight" class="w-5 h-5" />
+        </a>
+    </div>
+</section>

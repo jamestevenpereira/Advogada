@@ -12,6 +12,29 @@ body {
   margin: 0;
 }
 
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #78572b;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 10px 30px -5px rgba(120, 87, 43, 0.35);
+  transition: all 0.2s ease;
+  margin-top: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-cta:hover {
+  background-color: rgba(120, 87, 43, 0.9);
+  transform: scale(1.02);
+  box-shadow: 0 14px 36px -5px rgba(120, 87, 43, 0.45);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
 }

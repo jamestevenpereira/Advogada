@@ -208,10 +208,19 @@
 <app-faq [faqs]="faqs" />
 
 <!-- Post-FAQ CTA Section -->
-<section class="py-16 bg-white border-t border-zinc-100">
-    <div class="max-w-2xl mx-auto px-4 text-center">
-        <p class="text-zinc-500 mb-2 text-sm">Ainda tem dúvidas? A primeira conversa é sem compromisso.</p>
-        <a routerLink="/agendamento" class="btn-cta inline-flex items-center gap-2">
+<section class="py-20 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
+    <!-- Subtle texture overlay -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <img src="assets/hero-bg-geometric-hd.png" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="max-w-2xl mx-auto px-4 text-center relative z-10">
+        <p class="text-white/60 text-sm font-medium uppercase tracking-widest mb-3">Primeira conversa sem compromisso</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-3 leading-tight">
+            Ainda tem dúvidas?<br>Estamos aqui para ajudar.
+        </h2>
+        <p class="text-white/70 mb-8 text-base">Fale connosco hoje e perceba como podemos defender os seus interesses.</p>
+        <a routerLink="/agendamento"
+            class="inline-flex items-center gap-2 bg-secondary text-white px-10 py-4 rounded-xl font-bold text-base shadow-xl shadow-secondary/40 hover:bg-secondary/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer">
             Marcar a Minha Consulta
             <lucide-icon [name]="ChevronRight" class="w-5 h-5" />
         </a>

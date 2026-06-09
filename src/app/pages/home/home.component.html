@@ -1,24 +1,20 @@
 <!-- Hero Section -->
-<section class="relative pt-32 pb-20 lg:py-48 overflow-hidden">
-    <!-- Background Image with Overlay -->
+<section class="relative pt-32 pb-20 lg:pb-28 lg:pt-36 overflow-hidden bg-white">
+    <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="assets/hero-bg-geometric-hd.png" alt="" class="w-full h-full object-cover opacity-50"
-            loading="eager" />
+        <img src="assets/hero-bg-geometric-hd.png" alt="" class="w-full h-full object-cover opacity-50" loading="eager" />
         <div class="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/80"></div>
     </div>
 
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-            <!-- Text Content -->
-            <div
-                class="max-w-3xl lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
+            <!-- Left: Text Content -->
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <app-blur-fade [delay]="100">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-secondary/20 shadow-sm mb-6">
-                        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                        <span class="text-xs font-medium text-secondary tracking-wide uppercase">Advogada em Nelas &amp; Distrito de Viseu</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-8">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Ordem dos Advogados · Cédula 66631C</span>
                     </div>
                 </app-blur-fade>
 
@@ -54,26 +50,36 @@
                             <lucide-icon [name]="ChevronRight" class="w-5 h-5 ml-1" />
                         </app-shiny-button>
                         <a routerLink="/areas"
-                            class="btn-hero-secondary h-12 md:h-14 px-8 flex items-center justify-center w-full sm:w-auto text-base md:text-lg">
+                            class="inline-flex items-center justify-center gap-2 bg-zinc-100 text-zinc-800 px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-200 transition-all active:scale-95">
                             Ver Áreas de Atuação
                         </a>
                     </div>
-                    <p class="text-sm text-zinc-500 mt-3 text-center lg:text-left">
-                        <a href="tel:+351910322893" class="text-secondary font-medium hover:underline">
-                            📞 +351 910 322 893
+                    <p class="text-sm text-zinc-600">
+                        <a href="tel:+351910322893"
+                            class="inline-flex items-center gap-1.5 text-secondary font-semibold hover:underline"
+                            aria-label="Ligar para +351 910 322 893">
+                            <lucide-icon [name]="Phone" class="w-4 h-4" aria-hidden="true" />
+                            +351 910 322 893
                         </a>
                         <span class="text-zinc-400">, 2ª a 6ª das 9h às 18h (chamada rede móvel nacional)</span>
                     </p>
                 </app-blur-fade>
             </div>
 
-            <!-- Right Visual (Hero Image) -->
-            <div class="hidden lg:block lg:col-span-5 relative mt-12 lg:mt-0">
-                <app-blur-fade [delay]="400">
+            <!-- Right: Photo -->
+            <div class="flex justify-center lg:justify-end">
+                <app-blur-fade [delay]="300">
                     <div class="relative">
-                        <!-- Abstract Background Shapes -->
-                        <div
-                            class="absolute -inset-4 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-[2rem] rotate-6 opacity-60 blur-lg">
+                        <!-- Decorative ring -->
+                        <div class="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-br from-secondary/20 to-primary/15 rotate-3"></div>
+
+                        <!-- Photo frame -->
+                        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl w-80 md:w-96 lg:w-[420px] aspect-[3/4]">
+                            <img src="assets/advogada.jpg"
+                                alt="Dra. Conceição Lopes, advogada em Nelas e Distrito de Viseu"
+                                class="w-full h-full object-cover object-top"
+                                loading="eager" fetchpriority="high" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent"></div>
                         </div>
 
                         <!-- Main Image Container -->
@@ -97,71 +103,110 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Floating experience pill -->
+                        <div class="absolute -top-4 -right-4 bg-secondary text-white rounded-2xl shadow-xl px-4 py-2 text-center">
+                            <p class="text-2xl font-serif font-bold leading-none">7+</p>
+                            <p class="text-xs font-medium opacity-90 leading-tight mt-0.5">Anos Experiência</p>
+                        </div>
                     </div>
                 </app-blur-fade>
             </div>
+
         </div>
     </div>
 </section>
 
-<!-- Testimonials Marquee Section -->
-<section class="py-24 bg-zinc-50 border-y border-zinc-200">
-    <div class="max-w-7xl mx-auto px-4 mb-16 text-center">
-        <h2 class="section-title">O que dizem os nossos clientes</h2>
-        <div class="title-accent"></div>
-    </div>
-
-    <app-marquee [pauseOnHover]="true" class="py-12">
-        <ng-template>
-            <div class="flex gap-[var(--gap)]">
-                <div *ngFor="let t of testimonials" class="testimonial-card">
-                    <p class="testimonial-text">"{{ t.text }}"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="testimonial-avatar">
-                            {{ t.initials }}
-                        </div>
-                        <div>
-                            <p class="testimonial-author">{{ t.author }}</p>
-                            <p class="testimonial-case">{{ t.caseType }}</p>
-                        </div>
-                    </div>
-                </div>
+<!-- Stats Bar -->
+<section class="bg-primary py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-white/20">
+            <div class="text-center">
+                <p class="text-4xl font-serif font-bold text-secondary mb-1">7+</p>
+                <p class="text-sm text-white/70 font-medium uppercase tracking-wider">Anos de Experiência</p>
             </div>
-        </ng-template>
-    </app-marquee>
+            <div class="text-center">
+                <p class="text-4xl font-serif font-bold text-secondary mb-1">6</p>
+                <p class="text-sm text-white/70 font-medium uppercase tracking-wider">Áreas Jurídicas</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-serif font-bold text-secondary mb-1">Viseu</p>
+                <p class="text-sm text-white/70 font-medium uppercase tracking-wider">Distrito Servido</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-serif font-bold text-secondary mb-1">100%</p>
+                <p class="text-sm text-white/70 font-medium uppercase tracking-wider">Sigilo Profissional</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Core Values Section -->
 <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- Confidentiality -->
-            <div class="feature-item">
-                <div class="icon-container">
-                    <lucide-icon [name]="ShieldCheck" class="w-8 h-8 text-secondary" />
+            <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                    <lucide-icon [name]="ShieldCheck" class="w-8 h-8 text-secondary" aria-hidden="true" />
                 </div>
-                <h3 class="feature-title">Confidencialidade</h3>
-                <p class="feature-description">Tudo o que partilha fica entre nós. Sigilo profissional absoluto em cada conversa, documento e processo.</p>
+                <h2 class="text-xl font-bold mb-4 text-primary">Confidencialidade</h2>
+                <p class="text-zinc-500">Tudo o que partilha fica entre nós. Sigilo profissional absoluto em cada conversa, documento e processo.</p>
             </div>
 
-            <!-- Ethics & Justice -->
-            <div class="feature-item">
-                <div class="icon-container">
-                    <lucide-icon [name]="Scale" class="w-8 h-8 text-secondary" />
+            <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                    <lucide-icon [name]="Scale" class="w-8 h-8 text-secondary" aria-hidden="true" />
                 </div>
                 <h3 class="feature-title">Ética e Justiça</h3>
                 <p class="feature-description">Inscrita na Ordem dos Advogados (Cédula 66631C). Atuamos sempre com honestidade e no seu interesse real: sem atalhos, sem compromissos que o prejudiquem.</p>
             </div>
 
-            <!-- Humane Treatment -->
-            <div class="feature-item">
-                <div class="icon-container">
-                    <lucide-icon [name]="Users" class="w-8 h-8 text-secondary" />
+            <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                    <lucide-icon [name]="Users" class="w-8 h-8 text-secondary" aria-hidden="true" />
                 </div>
-                <h3 class="feature-title">Atendimento Humano</h3>
-                <p class="feature-description">O seu caso não é um número. Explicamos tudo em linguagem clara, acompanhamos cada etapa e respondemos sempre às suas dúvidas.</p>
+                <h2 class="text-xl font-bold mb-4 text-primary">Atendimento Humano</h2>
+                <p class="text-zinc-500">O seu caso não é um número. Explicamos tudo em linguagem clara, acompanhamos cada etapa e respondemos sempre às suas dúvidas.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-24 bg-zinc-50 border-y border-zinc-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">O que dizem os nossos clientes</h2>
+            <div class="h-1.5 w-24 bg-secondary mx-auto"></div>
+        </div>
+
+        <app-marquee [pauseOnHover]="true" class="py-4">
+            <ng-template>
+                <div class="flex gap-[var(--gap)]">
+                    <div *ngFor="let t of testimonials"
+                        class="mx-4 w-[380px] bg-white p-8 rounded-[2rem] border border-zinc-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+                        <!-- Stars -->
+                        <div class="flex gap-1 mb-4">
+                            <svg *ngFor="let s of stars" class="w-4 h-4 text-secondary fill-secondary" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <!-- Quote -->
+                        <p class="text-zinc-600 italic leading-relaxed mb-6 flex-1">"{{ t.text }}"</p>
+                        <!-- Author -->
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-sm text-primary shrink-0">
+                                {{ t.initials }}
+                            </div>
+                            <div>
+                                <p class="font-bold text-zinc-900 text-sm">{{ t.author }}</p>
+                                <p class="text-xs text-secondary font-semibold uppercase tracking-wide">{{ t.caseType }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </app-marquee>
     </div>
 </section>
 

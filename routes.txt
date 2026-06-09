@@ -1,0 +1,17 @@
+/
+/sobre
+/areas
+/areas/direito-da-familia
+/areas/direito-civil
+/areas/direito-do-trabalho
+/areas/direito-comercial
+/areas/direito-penal
+/areas/direito-administrativo
+/viseu
+/nelas
+/santa-comba-dao
+/tondela
+/carregal-do-sal
+/agendamento
+/politica-privacidade
+/politica-cookies

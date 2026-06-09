@@ -13,26 +13,32 @@
             </div>
         </app-blur-fade>
 
-        <!-- Bento Grid of Practice Areas -->
-        <app-bento-grid class="max-w-5xl mx-auto">
-            <div *ngFor="let area of practiceAreas; let i = index" [class]="area.class">
-                <app-magic-card class="h-full" [gradientColor]="'#78572b22'" [gradientOpacity]="0.5"
-                    [gradientSize]="250">
-                    <app-bento-card [title]="area.title" [description]="area.description"
-                        class="h-full border-none shadow-none bg-transparent">
-                        <div icon-container>
-                            <lucide-icon [name]="area.icon" class="w-10 h-10 text-secondary mb-2" />
-                        </div>
-                        <app-border-beam [delay]="i * 0.5" [duration]="10" />
-                    </app-bento-card>
-                </app-magic-card>
-            </div>
-        </app-bento-grid>
+        <!-- Practice Areas Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <app-blur-fade *ngFor="let area of practiceAreas; let i = index" [delay]="150 + i * 80">
+                <a [routerLink]="area.link"
+                    class="group bg-white border border-zinc-200 rounded-3xl p-8 hover:border-secondary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col cursor-pointer">
+
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/15 transition-colors duration-300">
+                        <lucide-icon [name]="area.icon" class="w-7 h-7 text-secondary" aria-hidden="true" />
+                    </div>
+
+                    <h2 class="text-lg font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-200">{{ area.title }}</h2>
+                    <p class="text-zinc-500 text-sm leading-relaxed flex-1">{{ area.description }}</p>
+
+                    <div class="flex items-center gap-1.5 mt-6 text-sm font-semibold text-secondary/70 group-hover:text-secondary transition-all duration-200">
+                        <span>Saber mais</span>
+                        <lucide-icon [name]="ArrowRight"
+                            class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+                    </div>
+                </a>
+            </app-blur-fade>
+        </div>
 
         <!-- Legal Aid Disclaimer -->
-        <app-blur-fade [delay]="600">
-            <div class="mt-20 p-8 rounded-3xl bg-zinc-50 border border-zinc-200 text-center max-w-3xl mx-auto">
-                <lucide-icon [name]="ScaleIcon" class="w-8 h-8 text-secondary mx-auto mb-4" />
+        <app-blur-fade [delay]="700">
+            <div class="mt-16 p-8 rounded-3xl bg-zinc-50 border border-zinc-200 text-center max-w-3xl mx-auto">
+                <lucide-icon [name]="ScaleIcon" class="w-8 h-8 text-secondary mx-auto mb-4" aria-hidden="true" />
                 <h3 class="text-xl font-bold text-primary mb-2">Apoio Judiciário</h3>
                 <p class="text-zinc-500">
                     Prestamos assessoria no âmbito do apoio judiciário, garantindo o acesso ao direito e aos tribunais
@@ -40,5 +46,6 @@
                 </p>
             </div>
         </app-blur-fade>
+
     </div>
 </section>

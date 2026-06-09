@@ -1,0 +1,137 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <a routerLink="/areas" class="hover:text-secondary transition-colors">Áreas de Atuação</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Direito Comercial</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="BuildingIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Direito Comercial</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada de Direito Comercial no Distrito de Viseu
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          Apoio jurídico especializado para empresas e empresários do Distrito de Viseu. Da constituição de sociedades à recuperação de créditos, a Dra. Conceição Lopes é o seu parceiro jurídico de confiança para fazer crescer e proteger o seu negócio.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- O que fazemos -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">O que fazemos</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Constituição de Sociedades -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="BuildingIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Constituição e Dissolução de Sociedades</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Assessoramos na criação de sociedades comerciais — Lda., SA, Sociedade Unipessoal — incluindo a redação do pacto social, definição da estrutura de capital e proteção dos direitos de cada sócio. Uma boa fundação jurídica evita conflitos societários futuros. Tratamos também de dissolução, liquidação e transformação de sociedades, assegurando o cumprimento de todas as obrigações legais.
+            </p>
+          </div>
+
+          <!-- Contratos Comerciais -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="FileTextIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Contratos Comerciais</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Redigimos e revisamos contratos de fornecimento, distribuição, franchising, parceria, licenciamento e prestação de serviços. Um contrato bem redigido define claramente as obrigações, protege em caso de incumprimento e evita ambiguidades que levam a litígios. Representamos também em disputas contratuais, seja em negociação direta ou em tribunal comercial.
+            </p>
+          </div>
+
+          <!-- Recuperação de Créditos -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ScaleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Recuperação de Créditos</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Recuperamos créditos em atraso através de injunção, ação executiva ou ação declarativa, conforme o caso. O processo de injunção é rápido e económico para valores até 15.000€ (30.000€ entre empresas) e permite obter título executivo sem julgamento. Em casos urgentes, podemos requerer arresto de bens do devedor para garantir a cobrança futura. Atuamos com eficácia e celeridade para minimizar o seu prejuízo.
+            </p>
+          </div>
+
+          <!-- Insolvência -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="TrendingDownIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Insolvência e Recuperação de Empresas</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Quando a empresa enfrenta dificuldades financeiras sérias, o PER (Processo Especial de Revitalização) e o RERE permitem negociar com credores e reestruturar a dívida de forma protegida. Representamos empresas em processos de insolvência — tanto do lado devedor como na defesa de credores — e gerimos a complexidade dos processos de liquidação. O objetivo é sempre preservar valor e minimizar perdas.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Como funciona o processo -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16 bg-zinc-50 rounded-3xl p-8 md:p-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Como funciona o processo</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+            <h3 class="text-lg font-bold text-primary">Diagnóstico Jurídico</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Analisamos a situação da sua empresa ou negócio, identificamos os riscos jurídicos e as oportunidades de proteção, e apresentamos um plano de ação claro.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+            <h3 class="text-lg font-bold text-primary">Estratégia e Execução</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Implementamos a solução jurídica acordada — redação de documentos, negociação com contrapartes, ou representação em tribunal — com rigor e eficiência.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+            <h3 class="text-lg font-bold text-primary">Acompanhamento Contínuo</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Mantemos uma relação de assessoria jurídica contínua para que a sua empresa tenha sempre apoio especializado nas decisões importantes do dia a dia.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- FAQ -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Perguntas Frequentes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <app-faq [faqs]="faqs" />
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Precisa de assessoria jurídica para a sua empresa?</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">A Dra. Conceição Lopes trabalha com empresas e empresários do Distrito de Viseu, oferecendo apoio jurídico prático e orientado para resultados.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

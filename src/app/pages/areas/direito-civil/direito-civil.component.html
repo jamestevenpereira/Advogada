@@ -1,0 +1,137 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <a routerLink="/areas" class="hover:text-secondary transition-colors">Áreas de Atuação</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Direito Civil</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="ScaleIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Direito Civil</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada de Direito Civil em Nelas e Viseu
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          Contratos, responsabilidade civil, litígios de propriedade e muito mais. A Dra. Conceição Lopes defende os seus interesses civis com rigor técnico e conhecimento profundo do sistema judicial do Distrito de Viseu.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- O que fazemos -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">O que fazemos</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Contratos -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="FileTextIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Elaboração e Revisão de Contratos</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Redigimos e analisamos contratos de compra e venda, arrendamento, prestação de serviços, empreitada e promessa de compra e venda. Uma cláusula mal redigida pode custar muito caro — a nossa revisão contratual identifica riscos antes de assinar e negocia as alterações necessárias para proteger os seus interesses. Atuamos tanto para particulares como para empresas do Distrito de Viseu.
+            </p>
+          </div>
+
+          <!-- Responsabilidade Civil -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ShieldIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Responsabilidade Civil e Indemnizações</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Se sofreu danos causados por terceiros — acidentes, incumprimentos contratuais, danos em propriedade — tem direito a indemnização. Avaliamos a viabilidade do seu pedido, quantificamos os danos (materiais, morais e lucros cessantes) e representamo-lo na negociação ou em tribunal. Atuamos também na defesa de quem é injustamente acusado de causar danos.
+            </p>
+          </div>
+
+          <!-- Direitos Reais -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="LandmarkIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Direitos Reais e Propriedade</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Tratamos de conflitos de propriedade, demarcações de terrenos, ações de reivindicação, servidões de passagem e cancelamento de hipotecas. A regularização de imóveis com problemas de registo predial é um dos nossos serviços mais procurados na região de Viseu. Analisamos a caderneta predial, o registo e os títulos de aquisição para encontrar a solução mais eficaz.
+            </p>
+          </div>
+
+          <!-- Litígios Civis -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ScaleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Litígios Civis no Tribunal de Viseu</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Representamo-lo no Tribunal Judicial da Comarca de Viseu em ações de declaração, execução, injunção e providências cautelares. Avaliamos sempre a probabilidade de sucesso e os custos do processo antes de recomendar a via judicial, privilegiando a resolução extrajudicial quando possível. A nossa experiência no tribunal local traduz-se em processos mais eficientes e resultados mais favoráveis.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Como funciona o processo -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16 bg-zinc-50 rounded-3xl p-8 md:p-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Como funciona o processo</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+            <h3 class="text-lg font-bold text-primary">Consulta Inicial</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Analisamos o seu caso, identificamos os fundamentos jurídicos e apresentamos as opções disponíveis — extrajudicial ou judicial — com uma estimativa de custos e prazos.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+            <h3 class="text-lg font-bold text-primary">Estratégia Jurídica</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Definimos a estratégia processual mais adequada, preparamos a documentação necessária e tentamos primeiro a resolução amigável, que é mais rápida e económica.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+            <h3 class="text-lg font-bold text-primary">Acompanhamento Total</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Representamo-lo em todas as fases — notificações, audiências, julgamento e eventuais recursos — mantendo-o sempre informado sobre o estado do processo.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- FAQ -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Perguntas Frequentes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <app-faq [faqs]="faqs" />
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Tem um problema de Direito Civil?</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Consulte a Dra. Conceição Lopes e receba uma avaliação clara do seu caso, com opções concretas para resolver a sua situação.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

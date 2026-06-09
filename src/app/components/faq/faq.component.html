@@ -14,6 +14,7 @@
         <div class="space-y-3">
             <app-blur-fade *ngFor="let faq of faqs; let i = index" [delay]="200 + i * 80">
                 <div class="border border-zinc-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                    <h3 class="m-0 text-base font-medium">
                     <button
                         data-faq-button
                         (click)="toggle(i)"
@@ -24,8 +25,10 @@
                         <lucide-icon
                             [name]="ChevronDown"
                             class="w-5 h-5 text-secondary shrink-0 transition-transform duration-200"
-                            [class.rotate-180]="openIndex() === i" />
+                            [class.rotate-180]="openIndex() === i"
+                            aria-hidden="true" />
                     </button>
+                    </h3>
                     <div
                         *ngIf="openIndex() === i"
                         data-faq-answer

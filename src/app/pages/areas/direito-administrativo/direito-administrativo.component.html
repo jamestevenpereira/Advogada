@@ -1,0 +1,137 @@
+<div class="pt-32 pb-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <app-blur-fade [delay]="100">
+      <nav class="mb-10 flex items-center gap-2 text-sm text-zinc-400" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:text-secondary transition-colors">Início</a>
+        <span>/</span>
+        <a routerLink="/areas" class="hover:text-secondary transition-colors">Áreas de Atuação</a>
+        <span>/</span>
+        <span class="text-secondary font-medium">Direito Administrativo</span>
+      </nav>
+    </app-blur-fade>
+
+    <!-- Hero -->
+    <app-blur-fade [delay]="200">
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+          <lucide-icon [name]="GavelIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
+          <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Direito Administrativo</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 max-w-3xl">
+          Advogada de Direito Administrativo no Distrito de Viseu
+        </h1>
+        <p class="text-lg text-zinc-500 max-w-2xl mb-8">
+          Quando a Administração Pública age de forma injusta ou ilegal, tem o direito de contestar. A Dra. Conceição Lopes representa-o em impugnações de atos administrativos, contencioso tributário e litígios com entidades públicas em todo o Distrito de Viseu.
+        </p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Marcar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+    <!-- O que fazemos -->
+    <app-blur-fade [delay]="300">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">O que fazemos</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Impugnação de Atos -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="GavelIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Impugnação de Atos Administrativos</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Contestamos atos administrativos ilegais praticados por câmaras municipais, serviços da Segurança Social, IEFP, organismos reguladores e outras entidades públicas. A impugnação pode ser feita por reclamação, recurso hierárquico ou ação administrativa judicial. Os prazos são geralmente curtos — contacte-nos assim que receber uma decisão que considere injusta para preservar os seus direitos.
+            </p>
+          </div>
+
+          <!-- Contencioso Tributário -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="ScaleIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Contencioso Tributário</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Contestamos liquidações fiscais abusivas, coimas tributárias, reversões fiscais sobre gerentes e processos de execução fiscal. Em caso de reversão fiscal — quando a AT responsabiliza gerentes por dívidas da empresa — a urgência é máxima, pois os prazos de oposição são de apenas 30 dias. A nossa intervenção precoce pode fazer a diferença entre pagar uma dívida que não é sua ou defender-se com sucesso.
+            </p>
+          </div>
+
+          <!-- Licenciamentos -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="FileTextIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Licenciamentos e Urbanismo</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Assessoramos em pedidos de licenciamento de obras, legalização de construções, alvarás de atividade e contraordenações urbanísticas. Impugnamos indeferimentos injustificados de licenças municipais e representamo-lo em processos de contraordenação junto das câmaras municipais do Distrito de Viseu — Viseu, Nelas, Tondela, Santa Comba Dão e Carregal do Sal.
+            </p>
+          </div>
+
+          <!-- Entidades Públicas -->
+          <div class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+              <lucide-icon [name]="BuildingIcon" class="w-6 h-6 text-secondary" aria-hidden="true" />
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2">Relações com Entidades Públicas</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">
+              Representamos cidadãos e empresas nas suas relações com o Estado e entidades públicas — contratos públicos, expropriações, concursos públicos, acesso a informação administrativa e direito de participação procedimental. Se uma entidade pública lhe causou danos ilegítimos, pode ter direito a indemnização através de ação de responsabilidade civil extracontratual do Estado.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- Como funciona o processo -->
+    <app-blur-fade [delay]="400">
+      <div class="mb-16 bg-zinc-50 rounded-3xl p-8 md:p-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Como funciona o processo</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+            <h3 class="text-lg font-bold text-primary">Análise do Ato</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Examinamos o ato administrativo ou a decisão fiscal contestada, verificamos a sua legalidade, os prazos aplicáveis e os fundamentos de impugnação disponíveis.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+            <h3 class="text-lg font-bold text-primary">Via Administrativa</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Sempre que possível, tentamos primeiro a via administrativa — reclamação ou recurso hierárquico — que é mais rápida e económica do que o tribunal. Em muitos casos, a decisão é revista sem necessidade de litigar.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+            <h3 class="text-lg font-bold text-primary">Via Judicial</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Quando necessário, representamo-lo no Tribunal Administrativo e Fiscal de Viseu ou no Tribunal Administrativo do Círculo de Coimbra, com rigor processual e conhecimento da jurisprudência aplicável.</p>
+          </div>
+        </div>
+      </div>
+    </app-blur-fade>
+
+    <!-- FAQ -->
+    <app-blur-fade [delay]="500">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Perguntas Frequentes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <app-faq [faqs]="faqs" />
+      </div>
+    </app-blur-fade>
+
+    <!-- CTA Banner -->
+    <app-blur-fade [delay]="600">
+      <div class="bg-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Tem um problema com a Administração Pública?</h2>
+        <p class="text-white/70 mb-8 max-w-xl mx-auto">Os prazos no Direito Administrativo são curtos. Não espere — consulte a Dra. Conceição Lopes e saiba como defender os seus direitos face ao Estado.</p>
+        <a routerLink="/agendamento"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-100 transition-all">
+          Agendar Consulta
+        </a>
+      </div>
+    </app-blur-fade>
+
+  </div>
+</div>

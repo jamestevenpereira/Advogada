@@ -1,13 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { LucideAngularModule, Menu, X } from 'lucide-angular';
+import { LucideAngularModule, Menu, X, ChevronDown, Heart, Scale, Briefcase, Building, Shield, Gavel } from 'lucide-angular';
 import { BorderBeamComponent } from '../../magic-ui/border-beam/border-beam.component';
 
-/**
- * HeaderComponent handles the main navigation of the application.
- * It includes a responsive design with a mobile-specific drawer menu.
- */
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -16,24 +12,33 @@ import { BorderBeamComponent } from '../../magic-ui/border-beam/border-beam.comp
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  /** Signal to track the state of the mobile menu */
   isMenuOpen = signal(false);
+  isAreasOpen = signal(false);
 
-  /** Icons used in the template */
   Menu = Menu;
   X = X;
+  ChevronDown = ChevronDown;
 
-  /**
-   * Toggles the mobile menu state.
-   */
+  areas = [
+    { label: 'Direito da Família', path: '/areas/direito-da-familia', icon: Heart },
+    { label: 'Direito Civil', path: '/areas/direito-civil', icon: Scale },
+    { label: 'Direito do Trabalho', path: '/areas/direito-do-trabalho', icon: Briefcase },
+    { label: 'Direito Comercial', path: '/areas/direito-comercial', icon: Building },
+    { label: 'Direito Penal', path: '/areas/direito-penal', icon: Shield },
+    { label: 'Direito Administrativo', path: '/areas/direito-administrativo', icon: Gavel },
+  ];
+
   toggleMenu(): void {
     this.isMenuOpen.set(!this.isMenuOpen());
+    if (!this.isMenuOpen()) this.isAreasOpen.set(false);
   }
 
-  /**
-   * Closes the mobile menu.
-   */
   closeMenu(): void {
     this.isMenuOpen.set(false);
+    this.isAreasOpen.set(false);
+  }
+
+  toggleAreas(): void {
+    this.isAreasOpen.set(!this.isAreasOpen());
   }
 }

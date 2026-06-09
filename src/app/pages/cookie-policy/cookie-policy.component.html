@@ -1,33 +1,90 @@
 <div class="min-h-screen bg-zinc-50 pt-32 pb-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <app-blur-fade [delay]="100">
-            <div class="bg-white p-12 rounded-3xl shadow-sm border border-zinc-200">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-zinc-200">
                 <h1 class="text-4xl font-serif font-bold text-primary mb-8">Política de Cookies</h1>
 
                 <div class="prose prose-zinc max-w-none space-y-6 text-zinc-600">
-                    <p class="font-medium">Última atualização: 29 de Janeiro de 2026</p>
+                    <p class="font-medium">Última atualização: 5 de junho de 2026</p>
 
                     <section>
                         <h2 class="text-2xl font-serif font-bold text-primary mt-8 mb-4">1. O que são Cookies?</h2>
-                        <p>Cookies são pequenos ficheiros de texto que o website armazena no seu computador ou
-                            dispositivo móvel através do navegador para melhorar a sua experiência de navegação.</p>
+                        <p>Cookies são pequenos ficheiros de texto armazenados no seu dispositivo quando visita um website. Permitem que o site reconheça o seu dispositivo em visitas futuras e guarde determinadas preferências.</p>
                     </section>
 
                     <section>
                         <h2 class="text-2xl font-serif font-bold text-primary mt-8 mb-4">2. Cookies que Utilizamos</h2>
-                        <p>Utilizamos apenas cookies estritamente necessários para o funcionamento do website e cookies
-                            de preferência (como o seu consentimento sobre cookies).</p>
-                        <ul class="list-disc pl-5 mt-2">
-                            <li><strong>Cookies Essenciais:</strong> Necessários para a navegação e segurança.</li>
-                            <li><strong>Cookies de Funcionalidade:</strong> Permitem recordar as escolhas do utilizador.
-                            </li>
+                        <p>Este website utiliza apenas cookies estritamente necessários e de funcionalidade. <strong>Não utilizamos cookies de rastreamento, análise ou publicidade.</strong></p>
+
+                        <div class="mt-4 overflow-x-auto">
+                            <table class="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr class="bg-zinc-50">
+                                        <th class="text-left p-3 border border-zinc-200 font-semibold text-zinc-700">Nome</th>
+                                        <th class="text-left p-3 border border-zinc-200 font-semibold text-zinc-700">Tipo</th>
+                                        <th class="text-left p-3 border border-zinc-200 font-semibold text-zinc-700">Finalidade</th>
+                                        <th class="text-left p-3 border border-zinc-200 font-semibold text-zinc-700">Duração</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-3 border border-zinc-200"><code>cookieConsent</code></td>
+                                        <td class="p-3 border border-zinc-200">Funcionalidade</td>
+                                        <td class="p-3 border border-zinc-200">Guarda a sua preferência de consentimento de cookies (aceite ou recusado) para não mostrar o aviso repetidamente.</td>
+                                        <td class="p-3 border border-zinc-200">Persistente (localStorage)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-6 space-y-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-zinc-800 mb-2">Cookies Essenciais</h3>
+                                <p>São necessários para o funcionamento básico do site. Sem eles, o site não funciona corretamente. Não requerem consentimento do utilizador.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-zinc-800 mb-2">Cookies de Funcionalidade</h3>
+                                <p>Permitem ao site recordar escolhas que faz (como o seu consentimento de cookies), para proporcionar uma experiência mais personalizada. O <code>cookieConsent</code> pertence a esta categoria.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-4 bg-green-50 border border-green-200 rounded-xl">
+                            <p class="text-green-800 text-sm"><strong>Sem rastreamento:</strong> Este website não instala cookies de análise (como Google Analytics), cookies de redes sociais (como Facebook Pixel) nem cookies de publicidade. Os seus dados de navegação não são partilhados com terceiros para fins comerciais.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-serif font-bold text-primary mt-8 mb-4">3. Serviços de Terceiros</h2>
+                        <p>O website incorpora os seguintes serviços de terceiros que podem definir os seus próprios cookies ou tecnologias de rastreamento:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-2">
+                            <li><strong>Google Maps (página Sobre):</strong> o mapa interativo do escritório é carregado a partir dos servidores da Google. A Google pode definir cookies associados ao serviço Google Maps. Consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-secondary underline">Política de Privacidade da Google</a>.</li>
+                            <li><strong>Google Fonts:</strong> as fontes tipográficas são carregadas dos servidores da Google. Este processo pode registar o seu endereço IP nos servidores da Google. Consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-secondary underline">Política de Privacidade da Google</a>.</li>
                         </ul>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-serif font-bold text-primary mt-8 mb-4">3. Gestão de Cookies</h2>
-                        <p>O utilizador pode, a qualquer momento, desativar os cookies através das definições do seu
-                            navegador, embora tal possa afetar a experiência de utilização do website.</p>
+                        <h2 class="text-2xl font-serif font-bold text-primary mt-8 mb-4">4. Como Gerir ou Recusar Cookies</h2>
+                        <p>Pode gerir ou eliminar cookies a qualquer momento através das definições do seu navegador:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-2">
+                            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" class="text-secondary underline">Google Chrome</a></li>
+                            <li><a href="https://support.mozilla.org/pt-PT/kb/bloquear-cookies-e-dados-de-sites" target="_blank" rel="noopener" class="text-secondary underline">Mozilla Firefox</a></li>
+                            <li><a href="https://support.apple.com/pt-pt/guide/safari/sfri11471/mac" target="_blank" rel="noopener" class="text-secondary underline">Safari</a></li>
+                            <li><a href="https://support.microsoft.com/pt-pt/microsoft-edge/eliminar-cookies-no-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" class="text-secondary underline">Microsoft Edge</a></li>
+                        </ul>
+                        <p class="mt-3">Note que a desativação de cookies pode afetar o funcionamento de algumas funcionalidades do site, como a memorização das suas preferências.</p>
+                        <p class="mt-2">Pode também retirar o consentimento de cookies a qualquer momento limpando os dados do site no seu navegador. Na próxima visita, o aviso de cookies será apresentado novamente.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-serif font-bold text-primary mt-8 mb-4">5. Contacto</h2>
+                        <p>Para qualquer questão relativa à utilização de cookies neste website, contacte-nos:</p>
+                        <p class="mt-2"><strong>Email:</strong> conceicao-66631c&#64;adv.oa.pt<br />
+                        <strong>Telefone:</strong> +351 910 322 893</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-serif font-bold text-primary mt-8 mb-4">6. Alterações a esta Política</h2>
+                        <p>Esta política pode ser atualizada para refletir alterações nos cookies utilizados ou na legislação aplicável. A data de última atualização é indicada no topo do documento.</p>
                     </section>
                 </div>
             </div>

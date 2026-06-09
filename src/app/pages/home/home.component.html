@@ -83,24 +83,16 @@
                                 alt="Dra. Conceição Lopes, advogada em Nelas e Distrito de Viseu"
                                 class="w-full h-full object-cover object-top"
                                 loading="eager" fetchpriority="high" />
-                            <!-- Bottom gradient for badge legibility -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-primary/35 via-transparent to-transparent"></div>
-
-                            <!-- In-photo stat badge -->
-                            <div class="absolute bottom-5 left-5 right-5 bg-white/15 backdrop-blur-md border border-white/25 rounded-xl px-4 py-3 flex items-center gap-3">
-                                <span class="text-3xl font-serif font-bold text-white leading-none">7</span>
-                                <span class="text-xs font-medium text-white/90 leading-tight">Anos de<br>Experiência Dedicada</span>
-                            </div>
                         </div>
 
-                        <!-- Floating badge: top-right -->
+                        <!-- Floating badge: top-right (outside photo frame) -->
                         <div class="absolute -top-3 -right-3 bg-secondary text-white rounded-2xl shadow-xl px-4 py-2.5 text-center z-10">
                             <p class="text-xl font-serif font-bold leading-none">7+</p>
                             <p class="text-[10px] font-semibold opacity-90 mt-0.5 whitespace-nowrap uppercase tracking-wide">Anos Exp.</p>
                         </div>
 
-                        <!-- Floating credential card: bottom-left -->
-                        <div class="absolute -bottom-4 -left-5 bg-white rounded-2xl shadow-lg border border-zinc-100 px-3.5 py-2.5 flex items-center gap-2.5 z-10">
+                        <!-- Floating credential card: bottom-right (outside photo frame, no overlap) -->
+                        <div class="absolute -bottom-5 -right-4 bg-white rounded-2xl shadow-lg border border-zinc-100 px-3.5 py-2.5 flex items-center gap-2.5 z-10">
                             <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
                                 <lucide-icon [name]="ShieldCheck" class="w-4 h-4 text-white" aria-hidden="true" />
                             </div>

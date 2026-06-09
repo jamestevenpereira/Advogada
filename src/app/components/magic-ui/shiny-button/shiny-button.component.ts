@@ -13,7 +13,7 @@ import { cn } from '../../../utils/cn';
     template: `
     <button
       [class]="cn(
-        'group relative flex items-center justify-center overflow-hidden rounded-lg bg-primary px-8 py-3 font-serif font-bold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]',
+        'group relative flex items-center justify-center overflow-hidden rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/25 active:scale-[0.98] cursor-pointer',
         class()
       )"
     >

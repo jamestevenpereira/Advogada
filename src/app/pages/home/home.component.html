@@ -1,114 +1,115 @@
 <!-- Hero Section -->
-<section class="relative pt-32 pb-20 lg:pb-28 lg:pt-36 overflow-hidden bg-white">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-        <img src="assets/hero-bg-geometric-hd.png" alt="" class="w-full h-full object-cover opacity-50" loading="eager" />
-        <div class="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/80"></div>
+<section class="relative min-h-[90vh] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-white">
+    <!-- Background: subtle geometric pattern, very light -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <img src="assets/hero-bg-geometric-hd.png" alt="" class="w-full h-full object-cover opacity-20" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-br from-white via-white/90 to-primary/5"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 items-center">
 
             <!-- Left: Text Content -->
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
-                <app-blur-fade [delay]="100">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-8">
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+
+                <!-- Credential pill -->
+                <app-blur-fade [delay]="80">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
                         <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                         <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Ordem dos Advogados · Cédula 66631C</span>
                     </div>
                 </app-blur-fade>
 
-                <app-blur-fade [delay]="200">
-                    <p class="text-sm font-semibold text-secondary tracking-wide uppercase mb-2">Dra. Conceição Lopes</p>
-                    <h1 class="hero-title text-zinc-900">
+                <!-- Name + Heading -->
+                <app-blur-fade [delay]="180">
+                    <p class="text-sm font-semibold text-secondary/80 tracking-wide uppercase mb-2">Dra. Conceição Lopes</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-serif font-bold text-primary leading-[1.1] mb-0">
                         Do seu lado em cada processo jurídico.
                     </h1>
                 </app-blur-fade>
 
-                <app-blur-fade [delay]="300">
-                    <div class="hero-subtitle">
+                <!-- Word Rotate subtitle -->
+                <app-blur-fade [delay]="320">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 text-xl md:text-2xl font-serif text-zinc-500 mt-5 mb-7">
                         <span>A sua defesa em</span>
-                        <app-word-rotate [words]="['Família', 'Civil', 'Trabalho', 'Comercial', 'Penal']"
-                            class="text-secondary font-bold" />
+                        <app-word-rotate
+                            [words]="['Família', 'Civil', 'Trabalho', 'Comercial', 'Penal']"
+                            class="text-secondary font-semibold" />
                     </div>
                 </app-blur-fade>
 
-                <app-blur-fade [delay]="500">
-                    <p class="hero-description text-lg text-zinc-600 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+                <!-- Description -->
+                <app-blur-fade [delay]="460">
+                    <p class="text-base md:text-lg text-zinc-500 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
                         Com 7 anos a acompanhar famílias, trabalhadores e empresas no Distrito de Viseu, a Dra.
                         Conceição Lopes explica os seus direitos em linguagem simples e defende os seus interesses
-                        com determinação, para que nunca enfrente sozinho os desafios legais da sua vida.
+                        com determinação.
                     </p>
                 </app-blur-fade>
 
-                <app-blur-fade [delay]="700" class="w-full sm:w-auto">
-                    <div
-                        class="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto justify-center lg:justify-start">
-                        <app-shiny-button (click)="schedulingRedirect()"
-                            class="w-full sm:w-auto h-12 md:h-14 px-8 text-base md:text-lg">
+                <!-- CTAs -->
+                <app-blur-fade [delay]="580">
+                    <div class="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start mb-5">
+                        <app-shiny-button (click)="schedulingRedirect()">
                             Marcar a Minha Consulta
-                            <lucide-icon [name]="ChevronRight" class="w-5 h-5 ml-1" />
+                            <lucide-icon [name]="ChevronRight" class="w-4 h-4" />
                         </app-shiny-button>
                         <a routerLink="/areas"
-                            class="inline-flex items-center justify-center gap-2 bg-zinc-100 text-zinc-800 px-8 py-4 rounded-2xl font-semibold text-base hover:bg-zinc-200 transition-all active:scale-95">
+                            class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg border-2 border-primary/20 text-primary font-semibold text-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-pointer">
                             Ver Áreas de Atuação
                         </a>
                     </div>
-                    <p class="text-sm text-zinc-600">
-                        <a href="tel:+351910322893"
-                            class="inline-flex items-center gap-1.5 text-secondary font-semibold hover:underline"
-                            aria-label="Ligar para +351 910 322 893">
-                            <lucide-icon [name]="Phone" class="w-4 h-4" aria-hidden="true" />
-                            +351 910 322 893
-                        </a>
-                        <span class="text-zinc-400">, 2ª a 6ª das 9h às 18h (chamada rede móvel nacional)</span>
-                    </p>
+                    <a href="tel:+351910322893"
+                        class="inline-flex items-center gap-2 text-sm hover:opacity-80 transition-opacity cursor-pointer"
+                        aria-label="Ligar para +351 910 322 893">
+                        <lucide-icon [name]="Phone" class="w-4 h-4 text-secondary" aria-hidden="true" />
+                        <span class="font-semibold text-secondary">+351 910 322 893</span>
+                        <span class="text-zinc-400">· 2ª a 6ª, 9h–18h</span>
+                    </a>
                 </app-blur-fade>
             </div>
 
-            <!-- Right: Photo -->
-            <div class="flex justify-center lg:justify-end">
-                <app-blur-fade [delay]="300">
-                    <div class="relative">
-                        <!-- Decorative ring -->
-                        <div class="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-br from-secondary/20 to-primary/15 rotate-3"></div>
+            <!-- Right: Portrait Photo (single, clean) -->
+            <div class="flex justify-center lg:justify-end order-1 lg:order-2">
+                <app-blur-fade [delay]="240">
+                    <div class="relative inline-block">
 
-                        <!-- Photo frame -->
-                        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl w-80 md:w-96 lg:w-[420px] aspect-[3/4]">
+                        <!-- Decorative background tilt -->
+                        <div class="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-secondary/15 via-primary/8 to-transparent rotate-2 -z-10"></div>
+
+                        <!-- Portrait frame: 3/4 ratio, elegant corners -->
+                        <div class="relative w-64 sm:w-72 lg:w-[340px] xl:w-[390px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
                             <img src="assets/advogada.jpg"
                                 alt="Dra. Conceição Lopes, advogada em Nelas e Distrito de Viseu"
                                 class="w-full h-full object-cover object-top"
                                 loading="eager" fetchpriority="high" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent"></div>
-                        </div>
+                            <!-- Bottom gradient for badge legibility -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/35 via-transparent to-transparent"></div>
 
-                        <!-- Main Image Container -->
-                        <div
-                            class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] transform hover:-translate-y-2 transition-transform duration-500">
-                            <img src="assets/foto-estatua.jpg" alt="Estátua da Justiça, símbolo da advocacia"
-                                class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-1000"
-                                loading="eager" fetchpriority="high" />
-
-                            <!-- Overlay Gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-
-                            <!-- Floating Badge -->
-                            <div
-                                class="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl border border-white/20 text-white backdrop-blur-md">
-                                <div class="flex items-center gap-4">
-                                    <div class="text-4xl font-serif font-bold text-secondary-light">7</div>
-                                    <div class="text-sm font-medium leading-tight opacity-90">
-                                        Anos de<br>Experiência Dedicada
-                                    </div>
-                                </div>
+                            <!-- In-photo stat badge -->
+                            <div class="absolute bottom-5 left-5 right-5 bg-white/15 backdrop-blur-md border border-white/25 rounded-xl px-4 py-3 flex items-center gap-3">
+                                <span class="text-3xl font-serif font-bold text-white leading-none">7</span>
+                                <span class="text-xs font-medium text-white/90 leading-tight">Anos de<br>Experiência Dedicada</span>
                             </div>
                         </div>
 
-                        <!-- Floating experience pill -->
-                        <div class="absolute -top-4 -right-4 bg-secondary text-white rounded-2xl shadow-xl px-4 py-2 text-center">
-                            <p class="text-2xl font-serif font-bold leading-none">7+</p>
-                            <p class="text-xs font-medium opacity-90 leading-tight mt-0.5">Anos Experiência</p>
+                        <!-- Floating badge: top-right -->
+                        <div class="absolute -top-3 -right-3 bg-secondary text-white rounded-2xl shadow-xl px-4 py-2.5 text-center z-10">
+                            <p class="text-xl font-serif font-bold leading-none">7+</p>
+                            <p class="text-[10px] font-semibold opacity-90 mt-0.5 whitespace-nowrap uppercase tracking-wide">Anos Exp.</p>
                         </div>
+
+                        <!-- Floating credential card: bottom-left -->
+                        <div class="absolute -bottom-4 -left-5 bg-white rounded-2xl shadow-lg border border-zinc-100 px-3.5 py-2.5 flex items-center gap-2.5 z-10">
+                            <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
+                                <lucide-icon [name]="ShieldCheck" class="w-4 h-4 text-white" aria-hidden="true" />
+                            </div>
+                            <div>
+                                <p class="text-[11px] font-bold text-zinc-900 leading-tight">Ordem dos Advogados</p>
+                                <p class="text-[10px] text-zinc-400 leading-tight">Cédula 66631C</p>
+                            </div>
+                        </div>
+
                     </div>
                 </app-blur-fade>
             </div>

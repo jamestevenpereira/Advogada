@@ -1,7 +1,6 @@
 import { Component, signal, inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
 import { BorderBeamComponent } from '../../components/magic-ui/border-beam/border-beam.component';
 import { CalendarComponent } from '../../components/ui/calendar/calendar.component';
@@ -17,7 +16,6 @@ import { SeoService } from '../../services/seo.service';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterLink,
     BlurFadeComponent,
     BorderBeamComponent,
     LucideAngularModule,

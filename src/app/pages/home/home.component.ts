@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { BlurFadeComponent } from '../../components/magic-ui/blur-fade/blur-fade.component';
 import { MarqueeComponent } from '../../components/magic-ui/marquee/marquee.component';
+import { WordRotateComponent } from '../../components/magic-ui/word-rotate/word-rotate.component';
+import { ShinyButtonComponent } from '../../components/magic-ui/shiny-button/shiny-button.component';
 import { LucideAngularModule, ChevronRight, ShieldCheck, Scale, Users, Phone } from 'lucide-angular';
 import { SeoService } from '../../services/seo.service';
 import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
@@ -15,6 +17,8 @@ import { FaqComponent, FaqItem } from '../../components/faq/faq.component';
     RouterLink,
     BlurFadeComponent,
     MarqueeComponent,
+    WordRotateComponent,
+    ShinyButtonComponent,
     LucideAngularModule,
     FaqComponent
   ],

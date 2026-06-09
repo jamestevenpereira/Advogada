@@ -9,5 +9,5 @@
 }
 
 .btn-primary {
-    @apply bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-primary/90 transition-all shadow-md active:scale-95;
+    @apply bg-secondary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-secondary/90 transition-all shadow-md shadow-secondary/25 active:scale-95;
 }

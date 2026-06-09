@@ -13,7 +13,7 @@ import { cn } from '../../../utils/cn';
     template: `
     <button
       [class]="cn(
-        'group relative flex items-center justify-center overflow-hidden rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/25 active:scale-[0.98] cursor-pointer',
+        'group relative flex items-center justify-center overflow-hidden rounded-lg bg-secondary px-9 py-3.5 text-sm font-semibold text-white shadow-lg shadow-secondary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-secondary/40 active:scale-[0.97] cursor-pointer',
         class()
       )"
     >
@@ -27,7 +27,7 @@ import { cn } from '../../../utils/cn';
       ></div>
       
       <!-- Constant Subtle Glow -->
-      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,rgba(120,87,43,0.15),transparent_70%)]"></div>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_70%)]"></div>
     </button>
   `,
     styles: [`

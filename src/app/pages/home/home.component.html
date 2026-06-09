@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section class="relative min-h-[90vh] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-white">
+<section class="relative min-h-[90svh] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-white">
     <!-- Background: subtle geometric pattern, very light -->
     <div class="absolute inset-0 z-0 pointer-events-none">
         <img src="assets/hero-bg-geometric-hd.png" alt="" class="w-full h-full object-cover opacity-20" loading="eager" />
@@ -73,13 +73,14 @@
             <!-- Right: Portrait Photo (single, clean) -->
             <div class="flex justify-center lg:justify-end order-1 lg:order-2">
                 <app-blur-fade [delay]="240">
-                    <div class="relative inline-block">
+                    <!-- Outer padding accounts for the floating badges that exceed the photo frame -->
+                    <div class="relative inline-block pt-4 pb-8 pr-4 sm:pt-3 sm:pb-6 sm:pr-3">
 
                         <!-- Decorative background tilt -->
                         <div class="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-secondary/15 via-primary/8 to-transparent rotate-2 -z-10"></div>
 
                         <!-- Portrait frame: 3/4 ratio, elegant corners -->
-                        <div class="relative w-64 sm:w-72 lg:w-[340px] xl:w-[390px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
+                        <div class="relative w-60 sm:w-72 lg:w-[340px] xl:w-[390px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
                             <img src="assets/advogada.jpg"
                                 alt="Dra. Conceição Lopes, advogada em Nelas e Distrito de Viseu"
                                 class="w-full h-full object-cover object-top"
@@ -87,13 +88,13 @@
                         </div>
 
                         <!-- Floating badge: top-right (outside photo frame) -->
-                        <div class="absolute -top-3 -right-3 bg-secondary text-white rounded-2xl shadow-xl px-4 py-2.5 text-center z-10">
+                        <div class="absolute top-0 right-0 bg-secondary text-white rounded-2xl shadow-xl px-4 py-2.5 text-center z-10">
                             <p class="text-xl font-serif font-bold leading-none">7+</p>
                             <p class="text-[10px] font-semibold opacity-90 mt-0.5 whitespace-nowrap uppercase tracking-wide">Anos Exp.</p>
                         </div>
 
                         <!-- Floating credential card: bottom-right (outside photo frame, no overlap) -->
-                        <div class="absolute -bottom-5 -right-4 bg-white rounded-2xl shadow-lg border border-zinc-100 px-3.5 py-2.5 flex items-center gap-2.5 z-10">
+                        <div class="absolute bottom-0 right-0 bg-white rounded-2xl shadow-lg border border-zinc-100 px-3.5 py-2.5 flex items-center gap-2.5 z-10">
                             <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
                                 <lucide-icon [name]="ShieldCheck" class="w-4 h-4 text-white" aria-hidden="true" />
                             </div>
@@ -143,8 +144,8 @@
                 <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
                     <lucide-icon [name]="ShieldCheck" class="w-8 h-8 text-secondary" aria-hidden="true" />
                 </div>
-                <h2 class="text-xl font-bold mb-4 text-primary">Confidencialidade</h2>
-                <p class="text-zinc-500">Tudo o que partilha fica entre nós. Sigilo profissional absoluto em cada conversa, documento e processo.</p>
+                <h3 class="feature-title">Confidencialidade</h3>
+                <p class="feature-description">Tudo o que partilha fica entre nós. Sigilo profissional absoluto em cada conversa, documento e processo.</p>
             </div>
 
             <div class="flex flex-col items-center text-center">
@@ -159,8 +160,8 @@
                 <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
                     <lucide-icon [name]="Users" class="w-8 h-8 text-secondary" aria-hidden="true" />
                 </div>
-                <h2 class="text-xl font-bold mb-4 text-primary">Atendimento Humano</h2>
-                <p class="text-zinc-500">O seu caso não é um número. Explicamos tudo em linguagem clara, acompanhamos cada etapa e respondemos sempre às suas dúvidas.</p>
+                <h3 class="feature-title">Atendimento Humano</h3>
+                <p class="feature-description">O seu caso não é um número. Explicamos tudo em linguagem clara, acompanhamos cada etapa e respondemos sempre às suas dúvidas.</p>
             </div>
         </div>
     </div>

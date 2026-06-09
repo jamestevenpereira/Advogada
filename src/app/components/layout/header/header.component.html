@@ -22,14 +22,16 @@
 
                 <!-- Áreas dropdown -->
                 <div class="relative group">
-                    <button class="nav-link flex items-center gap-1 py-2" aria-haspopup="true">
+                    <button class="nav-link flex items-center gap-1 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded"
+                        aria-haspopup="true"
+                        [attr.aria-expanded]="false">
                         Áreas
                         <lucide-icon [name]="ChevronDown"
-                            class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true" />
+                            class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
                     </button>
 
                     <!-- Dropdown panel -->
-                    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
                         <div class="bg-white rounded-2xl shadow-2xl border border-zinc-100 p-3 w-64">
                             <a *ngFor="let area of areas"
                                 [routerLink]="area.path"
@@ -58,14 +60,19 @@
 
             <!-- Mobile Menu Button -->
             <div class="md:hidden flex items-center">
-                <button (click)="toggleMenu()" class="text-zinc-600 focus:outline-none" aria-label="Toggle menu">
-                    <lucide-icon [name]="isMenuOpen() ? X : Menu" class="w-6 h-6" />
+                <button (click)="toggleMenu()"
+                    class="text-zinc-600 p-2.5 rounded-lg hover:bg-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    [attr.aria-expanded]="isMenuOpen()"
+                    aria-controls="mobile-nav"
+                    aria-label="Toggle menu">
+                    <lucide-icon [name]="isMenuOpen() ? X : Menu" class="w-6 h-6" aria-hidden="true" />
                 </button>
             </div>
         </div>
 
         <!-- Mobile Navigation -->
         <div *ngIf="isMenuOpen()"
+            id="mobile-nav"
             class="md:hidden py-4 border-t border-zinc-100 flex flex-col space-y-1 animate-in slide-in-from-top-2 duration-200">
             <a routerLink="/" (click)="closeMenu()" class="mobile-nav-link">Início</a>
             <a routerLink="/sobre" (click)="closeMenu()" class="mobile-nav-link">Sobre</a>

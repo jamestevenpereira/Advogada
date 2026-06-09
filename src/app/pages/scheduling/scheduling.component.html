@@ -67,7 +67,7 @@
                                     placeholder="Ex: Maria" />
                                 <p *ngIf="schedulingForm.get('firstName')?.invalid && schedulingForm.get('firstName')?.touched"
                                     id="sched-firstName-error"
-                                    class="text-[10px] text-red-500 mt-1" role="alert">
+                                    class="text-xs text-red-500 mt-1" role="alert">
                                     Nome inválido (use apenas letras).
                                 </p>
                             </div>
@@ -83,7 +83,7 @@
                                     placeholder="Ex: Silva" />
                                 <p *ngIf="schedulingForm.get('lastName')?.invalid && schedulingForm.get('lastName')?.touched"
                                     id="sched-lastName-error"
-                                    class="text-[10px] text-red-500 mt-1" role="alert">
+                                    class="text-xs text-red-500 mt-1" role="alert">
                                     Nome inválido (use apenas letras).
                                 </p>
                             </div>
@@ -103,7 +103,7 @@
                                     placeholder="maria@exemplo.com" />
                                 <p *ngIf="schedulingForm.get('email')?.invalid && schedulingForm.get('email')?.touched"
                                     id="sched-email-error"
-                                    class="text-[10px] text-red-500 mt-1" role="alert">
+                                    class="text-xs text-red-500 mt-1" role="alert">
                                     Email inválido.
                                 </p>
                             </div>
@@ -120,7 +120,7 @@
                                     placeholder="9xxxxxxxx" />
                                 <p *ngIf="schedulingForm.get('phone')?.invalid && schedulingForm.get('phone')?.touched"
                                     id="sched-phone-error"
-                                    class="text-[10px] text-red-500 mt-1" role="alert">
+                                    class="text-xs text-red-500 mt-1" role="alert">
                                     Introduza um número de telefone português com 9 dígitos (ex: 910000000).
                                 </p>
                             </div>
@@ -135,7 +135,7 @@
                                 (dateChange)="onDateChange($event)" />
                             <input type="hidden" formControlName="date" />
                             <p *ngIf="schedulingForm.get('date')?.invalid && schedulingForm.get('date')?.touched"
-                                class="text-[10px] text-red-500 mt-1" role="alert">
+                                class="text-xs text-red-500 mt-1" role="alert">
                                 Por favor selecione uma data válida (2ª a 6ª feira).
                             </p>
                         </div>
@@ -177,7 +177,13 @@
                             <textarea id="sched-reason" formControlName="reason" rows="4" class="form-textarea"
                                 aria-required="true"
                                 [class.border-red-500]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched"
+                                [attr.aria-describedby]="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched ? 'sched-reason-error' : null"
                                 placeholder="Descreva brevemente o assunto..."></textarea>
+                            <p *ngIf="schedulingForm.get('reason')?.invalid && schedulingForm.get('reason')?.touched"
+                                id="sched-reason-error"
+                                class="text-xs text-red-500 mt-1" role="alert">
+                                Por favor descreva brevemente o motivo da consulta.
+                            </p>
                         </div>
 
                         <!-- GDPR Consent -->

@@ -12,6 +12,12 @@ body {
   margin: 0;
 }
 
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
 .btn-cta {
   display: inline-flex;
   align-items: center;

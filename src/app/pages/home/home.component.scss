@@ -74,6 +74,50 @@
     @apply text-zinc-500;
 }
 
+// CTA Split Hybrid Section
+.cta-left {
+    background: #091c1a;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '\201C';
+        position: absolute;
+        left: 1rem;
+        top: -3.5rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 22rem;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.032);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    @media (min-width: 1024px) {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.08) 30%, rgba(255, 255, 255, 0.08) 70%, transparent);
+        }
+    }
+}
+
+.cta-step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgba(120, 87, 43, 0.22);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.2rem;
+    text-align: right;
+    padding-top: 0.1rem;
+}
+
 @keyframes pulse-slow {
 
     0%,

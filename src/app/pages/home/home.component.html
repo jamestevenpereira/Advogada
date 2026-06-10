@@ -208,22 +208,80 @@
 <!-- FAQ Section -->
 <app-faq [faqs]="faqs" />
 
-<!-- Post-FAQ CTA Section -->
-<section class="py-20 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
-    <!-- Subtle texture overlay -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
-        <img src="assets/hero-bg-geometric-hd.png" alt="" class="w-full h-full object-cover" />
-    </div>
-    <div class="max-w-2xl mx-auto px-4 text-center relative z-10">
-        <p class="text-white/60 text-sm font-medium uppercase tracking-widest mb-3">Primeira conversa sem compromisso</p>
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-3 leading-tight">
-            Ainda tem dúvidas?<br>Estamos aqui para ajudar.
-        </h2>
-        <p class="text-white/70 mb-8 text-base">Fale connosco hoje e perceba como podemos defender os seus interesses.</p>
-        <a routerLink="/agendamento"
-            class="inline-flex items-center gap-2 bg-secondary text-white px-10 py-4 rounded-xl font-bold text-base shadow-xl shadow-secondary/40 hover:bg-secondary/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer">
-            Marcar a Minha Consulta
-            <lucide-icon [name]="ChevronRight" class="w-5 h-5" />
-        </a>
+<!-- Post-FAQ CTA Section — Split Editorial -->
+<section class="overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
+
+        <!-- LEFT: dark, typographic -->
+        <div class="cta-left flex flex-col justify-center gap-8 px-8 py-16 sm:px-14 sm:py-20 lg:px-16">
+
+            <!-- Quote block -->
+            <div class="flex flex-col gap-5 relative z-10">
+                <p class="text-[0.6rem] tracking-[0.22em] uppercase text-white/35 font-medium">Nelas · Viseu · Portugal</p>
+                <blockquote class="font-serif italic text-[1.8rem] sm:text-[2.2rem] leading-[1.3] text-white/92 not-prose">
+                    "Ainda tem dúvidas?
+                    <span class="not-italic text-[#c9a97a]">Estamos aqui para<br>resolver o seu caso."</span>
+                </blockquote>
+            </div>
+
+            <!-- CTA block -->
+            <div class="flex flex-col gap-4 relative z-10">
+                <div class="w-12 h-px bg-white/20"></div>
+                <a routerLink="/agendamento"
+                    class="inline-flex items-center gap-2.5 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm w-fit hover:bg-white/10 active:bg-white/20 transition-all duration-200 cursor-pointer">
+                    Marcar Consulta Gratuita
+                    <lucide-icon [name]="ChevronRight" class="w-4 h-4" aria-hidden="true" />
+                </a>
+                <p class="text-[0.62rem] tracking-[0.15em] uppercase text-white/30">
+                    Sem compromisso · Apoio judiciário disponível
+                </p>
+            </div>
+        </div>
+
+        <!-- RIGHT: warm cream, 3-step process + phone -->
+        <div class="bg-[#f8f4ee] px-8 py-16 sm:px-12 sm:py-20 flex flex-col justify-center">
+
+            <p class="text-[0.6rem] tracking-[0.2em] uppercase text-secondary font-semibold mb-8">Como funciona</p>
+
+            <!-- Steps -->
+            <div class="flex flex-col">
+                <div class="flex items-start gap-4 pb-5 border-b border-zinc-200/70">
+                    <span class="cta-step-num">01</span>
+                    <div>
+                        <p class="text-sm font-semibold text-zinc-900 mb-1">Preenche o formulário</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Em menos de 2 minutos, sem compromisso</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 py-5 border-b border-zinc-200/70">
+                    <span class="cta-step-num">02</span>
+                    <div>
+                        <p class="text-sm font-semibold text-zinc-900 mb-1">Recebe confirmação</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Contactamos em até 24 horas úteis</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 pt-5">
+                    <span class="cta-step-num">03</span>
+                    <div>
+                        <p class="text-sm font-semibold text-zinc-900 mb-1">Primeira consulta</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Presencial em Nelas ou por videochamada</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone CTA -->
+            <div class="mt-8 pt-6 border-t border-zinc-200/70 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shrink-0">
+                    <lucide-icon [name]="Phone" class="w-4 h-4 text-white" aria-hidden="true" />
+                </div>
+                <div>
+                    <a href="tel:+351910322893"
+                        class="block text-sm font-semibold text-zinc-900 hover:text-secondary transition-colors">
+                        +351 910 322 893
+                    </a>
+                    <p class="text-xs text-zinc-400">2ª a 6ª · 9h–18h</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>

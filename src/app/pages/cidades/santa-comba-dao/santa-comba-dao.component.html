@@ -12,7 +12,7 @@
 
     <!-- Hero -->
     <app-blur-fade [delay]="200">
-      <div class="mb-16">
+      <div class="mb-16 flex flex-col items-center md:items-start text-center md:text-left">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
           <lucide-icon [name]="MapPinIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
           <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Advogada em Santa Comba Dão</span>
@@ -33,8 +33,8 @@
     <!-- Serviços disponíveis em Santa Comba Dão -->
     <app-blur-fade [delay]="300">
       <div class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Serviços disponíveis em Santa Comba Dão</h2>
-        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4 text-center md:text-left">Serviços disponíveis em Santa Comba Dão</h2>
+        <div class="h-1 w-16 bg-secondary mb-8 mx-auto md:mx-0"></div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a *ngFor="let area of practiceAreas" [routerLink]="'/areas/' + area.slug"
             class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all group">
@@ -51,24 +51,24 @@
     <!-- Porque escolher -->
     <app-blur-fade [delay]="400">
       <div class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Porque escolher a Dra. Conceição Lopes</h2>
-        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4 text-center md:text-left">Porque escolher a Dra. Conceição Lopes</h2>
+        <div class="h-1 w-16 bg-secondary mb-8 mx-auto md:mx-0"></div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-zinc-50 rounded-3xl p-6">
+          <div class="bg-zinc-50 rounded-3xl p-6 flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
               <lucide-icon [name]="AwardIcon" class="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <h3 class="text-lg font-bold text-primary mb-2">7 Anos de Experiência</h3>
             <p class="text-zinc-500 text-sm leading-relaxed">Com sete anos de prática jurídica no Distrito de Viseu, a Dra. Conceição Lopes possui experiência sólida nos tribunais e serviços públicos da região, o que se traduz numa defesa mais eficaz para os seus clientes de Santa Comba Dão.</p>
           </div>
-          <div class="bg-zinc-50 rounded-3xl p-6">
+          <div class="bg-zinc-50 rounded-3xl p-6 flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
               <lucide-icon [name]="MapPinIcon" class="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <h3 class="text-lg font-bold text-primary mb-2">Proximidade Regional</h3>
             <p class="text-zinc-500 text-sm leading-relaxed">O escritório em Nelas fica a cerca de 14 km de Santa Comba Dão — menos de 15 minutos de carro — permitindo consultas presenciais rápidas e acessíveis. Para quem prefere não se deslocar, a consulta por videochamada é igualmente eficaz e completamente confidencial.</p>
           </div>
-          <div class="bg-zinc-50 rounded-3xl p-6">
+          <div class="bg-zinc-50 rounded-3xl p-6 flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
               <lucide-icon [name]="ClockIcon" class="w-6 h-6 text-white" aria-hidden="true" />
             </div>
@@ -82,8 +82,8 @@
     <!-- Comarca de Viseu -->
     <app-blur-fade [delay]="500">
       <div class="mb-16 p-8 md:p-10 rounded-3xl bg-primary/5 border border-primary/10">
-        <h2 class="text-2xl font-serif font-bold text-primary mb-4">Comarca de Viseu — Santa Comba Dão</h2>
-        <div class="h-1 w-16 bg-secondary mb-6"></div>
+        <h2 class="text-2xl font-serif font-bold text-primary mb-4 text-center md:text-left">Comarca de Viseu — Santa Comba Dão</h2>
+        <div class="h-1 w-16 bg-secondary mb-6 mx-auto md:mx-0"></div>
         <p class="text-zinc-600 mb-4">
           O concelho de Santa Comba Dão integra a Comarca de Viseu. Todos os processos judiciais de residentes de Santa Comba Dão correm no Tribunal Judicial da Comarca de Viseu, incluindo matérias de direito de família, civil, laboral, comercial, penal e administrativo.
         </p>

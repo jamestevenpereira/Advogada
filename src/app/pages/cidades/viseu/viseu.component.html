@@ -12,7 +12,7 @@
 
     <!-- Hero -->
     <app-blur-fade [delay]="200">
-      <div class="mb-16">
+      <div class="mb-16 flex flex-col items-center md:items-start text-center md:text-left">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
           <lucide-icon [name]="MapPinIcon" class="w-4 h-4 text-secondary" aria-hidden="true" />
           <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Advogada em Viseu</span>
@@ -33,8 +33,8 @@
     <!-- Serviços disponíveis em Viseu -->
     <app-blur-fade [delay]="300">
       <div class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Serviços disponíveis em Viseu</h2>
-        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4 text-center md:text-left">Serviços disponíveis em Viseu</h2>
+        <div class="h-1 w-16 bg-secondary mb-8 mx-auto md:mx-0"></div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a *ngFor="let area of practiceAreas" [routerLink]="'/areas/' + area.slug"
             class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-secondary/30 hover:shadow-lg transition-all group">
@@ -51,24 +51,24 @@
     <!-- Porque escolher -->
     <app-blur-fade [delay]="400">
       <div class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Porque escolher a Dra. Conceição Lopes em Viseu</h2>
-        <div class="h-1 w-16 bg-secondary mb-8"></div>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4 text-center md:text-left">Porque escolher a Dra. Conceição Lopes em Viseu</h2>
+        <div class="h-1 w-16 bg-secondary mb-8 mx-auto md:mx-0"></div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-zinc-50 rounded-3xl p-6">
+          <div class="bg-zinc-50 rounded-3xl p-6 flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
               <lucide-icon [name]="AwardIcon" class="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <h3 class="text-lg font-bold text-primary mb-2">7 Anos de Experiência</h3>
             <p class="text-zinc-500 text-sm leading-relaxed">Com 7 anos de prática jurídica no Distrito de Viseu, a Dra. Conceição Lopes conhece profundamente o sistema judicial local — os tribunais, os juízes e os procedimentos específicos da Comarca de Viseu. Essa experiência local traduz-se em processos mais eficientes para os seus clientes.</p>
           </div>
-          <div class="bg-zinc-50 rounded-3xl p-6">
+          <div class="bg-zinc-50 rounded-3xl p-6 flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
               <lucide-icon [name]="MapPinIcon" class="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <h3 class="text-lg font-bold text-primary mb-2">Conhecimento Local</h3>
             <p class="text-zinc-500 text-sm leading-relaxed">Conhecer o território onde se pratica direito faz diferença. A proximidade com o Tribunal Judicial da Comarca de Viseu, com os serviços da Segurança Social e com as câmaras municipais do Distrito permite uma representação mais ágil e eficaz — algo que só se constrói com anos de trabalho contínuo na região.</p>
           </div>
-          <div class="bg-zinc-50 rounded-3xl p-6">
+          <div class="bg-zinc-50 rounded-3xl p-6 flex flex-col items-center md:items-start text-center md:text-left">
             <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-4">
               <lucide-icon [name]="ClockIcon" class="w-6 h-6 text-white" aria-hidden="true" />
             </div>
@@ -82,8 +82,8 @@
     <!-- Comarca de Viseu -->
     <app-blur-fade [delay]="500">
       <div class="mb-16 p-8 md:p-10 rounded-3xl bg-primary/5 border border-primary/10">
-        <h2 class="text-2xl font-serif font-bold text-primary mb-4">Comarca de Viseu — Cobertura Jurisdicional</h2>
-        <div class="h-1 w-16 bg-secondary mb-6"></div>
+        <h2 class="text-2xl font-serif font-bold text-primary mb-4 text-center md:text-left">Comarca de Viseu — Cobertura Jurisdicional</h2>
+        <div class="h-1 w-16 bg-secondary mb-6 mx-auto md:mx-0"></div>
         <p class="text-zinc-600 mb-4">
           O Tribunal Judicial da Comarca de Viseu abrange todos os concelhos do Distrito de Viseu — incluindo Viseu, Nelas, Tondela, Santa Comba Dão, Carregal do Sal, Mangualde, Sátão, Aguiar da Beira, Castro Daire, Cinfães, Lamego, Moimenta da Beira, Mortágua, Penalva do Castelo, Penedono, Resende, São João da Pesqueira, Tabuaço, Tarouca e Vila Nova de Paiva.
         </p>

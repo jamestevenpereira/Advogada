@@ -213,10 +213,10 @@
     <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
 
         <!-- LEFT: dark, typographic -->
-        <div class="cta-left flex flex-col justify-center gap-8 px-8 py-16 sm:px-14 sm:py-20 lg:px-16">
+        <div class="cta-left flex flex-col justify-center items-center lg:items-start gap-8 px-8 py-16 sm:px-14 sm:py-20 lg:px-16">
 
             <!-- Quote block -->
-            <div class="flex flex-col gap-5 relative z-10">
+            <div class="flex flex-col gap-5 relative z-10 items-center lg:items-start text-center lg:text-left">
                 <p class="text-[0.6rem] tracking-[0.22em] uppercase text-white/30 font-medium">Nelas · Viseu · Portugal</p>
                 <blockquote class="font-serif italic text-[1.8rem] sm:text-[2.2rem] leading-[1.3] text-white not-prose">
                     "Ainda tem dúvidas?
@@ -225,14 +225,14 @@
             </div>
 
             <!-- CTA block -->
-            <div class="flex flex-col gap-4 relative z-10">
+            <div class="flex flex-col gap-4 relative z-10 items-center lg:items-start">
                 <div class="w-12 h-px bg-white/20"></div>
                 <a routerLink="/agendamento"
                     class="inline-flex items-center gap-2.5 border border-white/30 text-white px-7 py-3.5 rounded-full font-semibold text-sm w-fit hover:bg-white/10 active:bg-white/20 transition-all duration-200 cursor-pointer">
                     Marcar Consulta Gratuita
                     <lucide-icon [name]="ChevronRight" class="w-4 h-4" aria-hidden="true" />
                 </a>
-                <p class="text-[0.62rem] tracking-[0.15em] uppercase text-white/30">
+                <p class="text-[0.62rem] tracking-[0.15em] uppercase text-white/30 text-center lg:text-left">
                     Sem compromisso · Apoio judiciário disponível
                 </p>
             </div>
